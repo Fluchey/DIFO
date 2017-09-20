@@ -54,7 +54,7 @@
 \begin{document}
 
 \maketitle
-
+\newpage
 % Here the actual report starts. Everything from here to the start of the
 % bibilography should, of course, be removed before you start writing your
 % own text.
@@ -69,7 +69,6 @@ The evidence for the case where provided in a .zip file named Lab1.zip. This fil
 \\ MD5
 \\ {\footnotesize c4a731672747131b8b457a77178ad386}
 
-\newpage
 When opening the zip file the following folders and files where present: \\
 \dirtree{%
 .1 Lab1.
@@ -111,11 +110,59 @@ When opening the zip file the following folders and files where present: \\
 .3 c1l.png.
 .3 c2l.png.
 }
-\section{Exercise 1 - Hashing}
-\section{Exercise 2 - Hashing}
-\section{Exercise 3 - Hashing}
-\section{Exercise 4 - Hashing}
-\section{Exercise 5 - Hashing}
+\newpage
+
+%----------------------------------------------------
+%-------------- EXERCISE 1
+%----------------------------------------------------
+\section{Exercise 1: Hashing}
+In order to maintain the chain of custody and to uniquely identify all the files, the hash sum where calculated for all the files in the folder Exercise1\textunderscore Hashing:
+\\
+\\
+SHA256\\
+{\scriptsize 1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  erase\\
+1316543942a8c6cd754855500cd37068edbbd8b31c4979d2825a4e799fed6102  erase.exe\\
+fad878bd261840a4ea4a8277c546d4f46e79bbeb60b059cee41f8b50e28d0e88  hello\\
+1316543942a8c6cd754855500cd37068edbbd8b31c4979d2825a4e799fed6102  hello (2)\\
+60d13913155644883f130b85eb24d778314014c9479aedb5f6323bf38ad3a451  hello (3)\\
+1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  hello (4)\\
+60d13913155644883f130b85eb24d778314014c9479aedb5f6323bf38ad3a451  hello.exe\\}
+\\
+MD5\\
+{\scriptsize da5c61e1edc0f18337e46418e48c1290  erase\\
+cdc47d670159eef60916ca03a9d4a007  erase.exe\\
+da5c61e1edc0f18337e46418e48c1290  hello\\
+cdc47d670159eef60916ca03a9d4a007  hello (2)\\
+cdc47d670159eef60916ca03a9d4a007  hello (3)\\
+da5c61e1edc0f18337e46418e48c1290  hello (4)\\
+cdc47d670159eef60916ca03a9d4a007  hello.exe\\}
+\\
+In Kali Linux \footnote{https://www.kali.org/}
+
+
+
+
+
+
+%----------------------------------------------------
+%-------------- EXERCISE 2
+%----------------------------------------------------
+\section{Exercise 2: File Headers}
+%----------------------------------------------------
+%-------------- EXERCISE 3
+%----------------------------------------------------
+\section{Exercise 3: Anti Files Forensics}
+%----------------------------------------------------
+%-------------- EXERCISE 4
+%----------------------------------------------------
+\section{Exercise 4: Acquisition}
+%----------------------------------------------------
+%-------------- EXERCISE 5
+%----------------------------------------------------
+\section{Exercise 5: }
+%----------------------------------------------------
+%-------------- EXERCISE 6
+%----------------------------------------------------
 \section{Exercise 6 - Hashing}
 
 %\bibliographystyle{plain}
