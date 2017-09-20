@@ -1,6 +1,6 @@
 % The format (A5) is selected to facilitate reading on small
 % devices and should NOT be changed.
-\documentclass[a5paper,10pt,oneside]{article}
+\documentclass[a4paper,10pt,oneside]{article}
 
 % The package babel is loaded for Swdish with Swedish hyphenation,
 % replaces "Contents" with "Innehållsförteckning, "References"
@@ -27,15 +27,33 @@
 \usepackage{ifthen}
 \usepackage{listings}
 \usepackage{dirtree}
+\usepackage{color}
 
 % These two lines set up options for the listings package and
 % can be removed if you don't use it, or changed if you, e.g,
 % use another language than Java.
 % For more information about the listings package see:
 % ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
-\def \lstlistingname {Kodexempel}
-\lstset{language=Java,tabsize=3,numbers=left,frame=L,floatplacement=hbtp}
-
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\def \lstlistingname {Example}
+\lstset{frame=tb,
+  language=Bash,
+    aboveskip=3mm,
+      belowskip=3mm,
+        showstringspaces=false,
+  columns=flexible,
+    basicstyle={\footnotesize\ttfamily},
+      numbers=none,
+        numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+      stringstyle=\color{mauve},
+        breaklines=true,
+  breakatwhitespace=true,
+    tabsize=3
+    }
 \usepackage{ifpdf}
 \ifpdf
 	\usepackage[hidelinks]{hyperref}
@@ -116,29 +134,27 @@ When opening the zip file the following folders and files where present: \\
 %-------------- EXERCISE 1
 %----------------------------------------------------
 \section{Exercise 1: Hashing}
-In order to maintain the chain of custody and to uniquely identify all the files, the hash sum where calculated for all the files in the folder Exercise1\textunderscore Hashing:
-\\
-\\
-SHA256\\
-{\scriptsize 1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  erase\\
-1316543942a8c6cd754855500cd37068edbbd8b31c4979d2825a4e799fed6102  erase.exe\\
-fad878bd261840a4ea4a8277c546d4f46e79bbeb60b059cee41f8b50e28d0e88  hello\\
-1316543942a8c6cd754855500cd37068edbbd8b31c4979d2825a4e799fed6102  hello (2)\\
-60d13913155644883f130b85eb24d778314014c9479aedb5f6323bf38ad3a451  hello (3)\\
-1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  hello (4)\\
-60d13913155644883f130b85eb24d778314014c9479aedb5f6323bf38ad3a451  hello.exe\\}
-\\
-MD5\\
-{\scriptsize da5c61e1edc0f18337e46418e48c1290  erase\\
-cdc47d670159eef60916ca03a9d4a007  erase.exe\\
-da5c61e1edc0f18337e46418e48c1290  hello\\
-cdc47d670159eef60916ca03a9d4a007  hello (2)\\
-cdc47d670159eef60916ca03a9d4a007  hello (3)\\
-da5c61e1edc0f18337e46418e48c1290  hello (4)\\
-cdc47d670159eef60916ca03a9d4a007  hello.exe\\}
-\\
-In Kali Linux \footnote{https://www.kali.org/}
+In order to maintain the chain of custody and to uniquely identify all the files, the hash sum where calculated for all the files in the folder Exercise1\textunderscore Hashing.
+In Kali Linux \footnote{https://www.kali.org/} it is possible to calculate the hash sum of a file using the 'file' command
+\begin{lstlisting}
+sha256sum *
+1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  erase
+1316543942a8c6cd754855500cd37068edbbd8b31c4979d2825a4e799fed6102  erase.exe
+fad878bd261840a4ea4a8277c546d4f46e79bbeb60b059cee41f8b50e28d0e88  hello
+1316543942a8c6cd754855500cd37068edbbd8b31c4979d2825a4e799fed6102  hello (2)
+60d13913155644883f130b85eb24d778314014c9479aedb5f6323bf38ad3a451  hello (3)
+1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  hello (4)
+60d13913155644883f130b85eb24d778314014c9479aedb5f6323bf38ad3a451  hello.exe
 
+md5sum *
+da5c61e1edc0f18337e46418e48c1290  erase
+cdc47d670159eef60916ca03a9d4a007  erase.exe
+da5c61e1edc0f18337e46418e48c1290  hello
+cdc47d670159eef60916ca03a9d4a007  hello (2)
+cdc47d670159eef60916ca03a9d4a007  hello (3)
+da5c61e1edc0f18337e46418e48c1290  hello (4)
+cdc47d670159eef60916ca03a9d4a007  hello.exe}
+\end{lstlisting}
 
 
 
