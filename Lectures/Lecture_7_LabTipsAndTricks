@@ -1,0 +1,57 @@
+Windows
+        EVENT LOGGING
+                You can use the file header to find a log for an event
+
+                Event Viewer
+
+        LINK FILES
+                file with .LNK links to other files
+
+        WINDOWS ARTEFACT ANALYSIS TOOLS
+                Dcode
+                        A program where you can enter eventID and get information about the event
+
+        PREFETCH FILES
+                Recorded patterns of the user to prefetch files for regular user actions
+                        If the user always open the mail client every morning, the computer learns to open it faster
+
+                The prefetch folder has a mac capacity of 128 files
+
+
+        INSTALLED FILES
+                C:\User\AppData contains files and information about installed programs.
+
+        THUMBNAIL CACHE IN WINDOWS XP
+                Whenever you created a picture folder a thumbnail.db files where created.
+                        This file where never deleted so you as a forensic examiner could wath it even if the files wherent present anymore
+
+        PRINTER FILES
+                Windows send data about print jobs in EMF formats
+                        Shadow File
+                                Contains information about the printed file
+                        Spool File
+
+        RECYCLE BIN WINXP
+                When a file is moved to RB it is renamed with D:\ in front of the filename
+
+        RECYCLE BIN WIN7/8/10
+                Contains much more information about the file deleted
+
+        EXTERNAL DEVICES
+                Windows Registry contains information about USB related information
+                You can tie an external device to the computer
+
+        PAGEFILES
+                C:\Pagefile.sys keeps the data swapped out of RAM
+                This can be used to find information about data that has been in RAM
+                String search in pagefile.sys might find password, email, addresses, IP addresses
+
+        HIBERNATION FILEs
+                Similar to Pagefile.sys
+                hiberfil.sys is a repository for contents of RAM when a system is hibernated
+
+        RESTORE POINTS AND SHADOW COPIES
+                Backup and restore points are used like TimeMachine
+                You can revert to a previous system state
+                '> vssadmin' is a command that will show restore points
+
