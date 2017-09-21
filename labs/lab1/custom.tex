@@ -5,7 +5,7 @@
 % The package babel is loaded for Swdish with Swedish hyphenation,
 % replaces "Contents" with "Innehållsförteckning, "References"
 % with "Litteraturförteckning", etc.
-\usepackage[swedish]{babel}
+\usepackage[swedish,english]{babel}
 
 \usepackage[T1]{fontenc}
 
@@ -77,17 +77,23 @@
 % bibilography should, of course, be removed before you start writing your
 % own text.
 
+\tableofcontents
+\newpage
+
 % INTRODUCTION
-\section{Introduction}
+\section{Background}
 The evidence for the case where provided in a .zip file named Lab1.zip. This file produced the following hash sums:
 \\
 \\ SHA256
 \\ {\footnotesize 9c5d0bfbeccd75858426cfc84345e0a68687b0fc5662b715153aa88cefd60fba}
 \\
-\\ MD5
-\\ {\footnotesize c4a731672747131b8b457a77178ad386}
+\\
+MD5\\
+{\footnotesize c4a731672747131b8b457a77178ad386}
+\\
+\\
+When opening the zip file the following folders and files where present:
 
-When opening the zip file the following folders and files where present: \\
 \dirtree{%
 .1 Lab1.
 .2 Exercise1\textunderscore Hashing.
@@ -134,8 +140,17 @@ When opening the zip file the following folders and files where present: \\
 %-------------- EXERCISE 1
 %----------------------------------------------------
 \section{Exercise 1: Hashing}
-In order to maintain the chain of custody and to uniquely identify all the files, the hash sum where calculated for all the files in the folder Exercise1\textunderscore Hashing.
-In Kali Linux \footnote{https://www.kali.org/} it is possible to calculate the hash sum of a file using the 'file' command
+In order to maintain the chain of custody and to uniquely identify all files, the hash sum for SHA256
+\footnote{\url{https://en.wikipedia.org/wiki/SHA-2}} and MD5 \footnote{\url{https://en.wikipedia.org/wiki/MD5}}
+where calculated for all the files in the folder Exercise1\textunderscore Hashing. In Kali Linux \footnote{\url{https://www.kali.org/}}
+it is possible to calculate the hash sum of a file using the bash shell \footnote{\url{https://en.wikipedia.org/wiki/Bash_(Unix_shell)}}.
+For example, if you type the command:
+\begin{lstlisting}
+sha256sum *
+\end{lstlisting}
+It will calculate and display the hash sum for the SHA256 algorithm for all the files in the folder you are currently standing.
+This resulted in the following hash sums:
+
 \begin{lstlisting}
 sha256sum *
 1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  erase
@@ -153,32 +168,145 @@ da5c61e1edc0f18337e46418e48c1290  hello
 cdc47d670159eef60916ca03a9d4a007  hello (2)
 cdc47d670159eef60916ca03a9d4a007  hello (3)
 da5c61e1edc0f18337e46418e48c1290  hello (4)
-cdc47d670159eef60916ca03a9d4a007  hello.exe}
+cdc47d670159eef60916ca03a9d4a007  hello.exe
 \end{lstlisting}
 
+An efficient way for matching hash sums is also possible using the same command, but we need to provide an option to it. Using the '-c' option
+we can quickly check if a provided hash sum match with the file we are checking. First we need to create a new file with the hash sum for
+all the files in the folder:
 
+\begin{lstlisting}
+sha256sum * > checksums.chk
+\end{lstlisting}
 
+This will create a new file named 'checksums.chk' which contains all the hash sums for the files in the folder. Then we run the command:
+
+\begin{lstlisting}
+sha256sum -c checksums.chk
+\end{lstlisting}
+
+The output should be the following:
+
+\begin{lstlisting}
+erase: OK
+erase.exe: OK
+hello: OK
+hello (2): OK
+hello (3): OK
+hello (4): OK
+hello.exe: OK
+\end{lstlisting}
+
+Which indicates that all the files currently stored in 'checksums.chk' match with all the files in the folder.
+Now lets say that we have a specific file of interest which we know the hash sum of and we want to find out if the file is present on a computer.
+This can be achieced by using the following command:
+
+\begin{lstlisting}
+find . -type f -exec sha256sum {} + | grep '^SHA256SUM'
+\end{lstlisting}
+
+{\footnotesize *Note that you need to replace 'SHA256SUM' with the actual hash value of the file}\\\\
+This will search through the specified folder recursively for correlating SHA256 sums. If we run the command:
+
+\begin{lstlisting}
+find . -type f -exec sha256sum {} + | grep '^1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56'
+\end{lstlisting}
+
+Which is the SHA256 sum of the file 'erase' mentioned above. We get the output:
+
+\begin{lstlisting}
+1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  ./erase
+1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  ./hello (4)
+\end{lstlisting}
+
+This indicates that we found two files that both have the same SHA256 sum, 'erase' and 'hello (4)'.
+
+This is a feature which should be considered as beneficial for a forensic examiner since it means that if you suspect that a file is present on a computer you can
+easily find it. Even though the file name is changed the hash sums will be identical.
+
+%----------------------------------------------------
+%-------------- EXERCISE 1.2
+%----------------------------------------------------
+\subsection{Exercise 1.2: Comparison of Hashing Algorithms}
+In this exercise the execution time of the SHA256 and the MD5 algorithm will be compared. The file that is used to compare the times can be found at \url{http://ipv4.download.thinkbroadband.com:8080/1GB.zip}
+And should produce the following hash sums:
+
+\begin{lstlisting}
+sha256sum
+5674e59283d95efe8c88770515a9bbc80cbb77cb67602389fd91def26d26aed2
+
+md5sum
+286e80b3b7420263038ab06d76774043
+\end{lstlisting}
+
+Using the 'stat' command we can get more information about the file:
+
+\begin{lstlisting}
+stat 1GB.zip
+      File: 1GB.zip
+      Size: 1073741824      Blocks: 2097160    IO Block: 4096   regular file
+    Device: 801h/2049d      Inode: 13369385    Links: 1
+    Access: (0664/-rw-rw-r--)  Uid: ( 1000/ fluchey)   Gid: ( 1000/ fluchey)
+    Access: 2017-09-21 11:56:19.516000051 +0200
+    Modify: 2017-09-21 11:55:49.996055229 +0200
+    Change: 2017-09-21 11:55:50.100055012 +0200
+     Birth: -
+\end{lstlisting}
+
+If we want to measure the time it takes to compute tha hash sums we can use the command 'time'.
+
+\begin{lstlisting}
+time sha256sum 1GB.zip
+5674e59283d95efe8c88770515a9bbc80cbb77cb67602389fd91def26d26aed2  1GB.zip
+
+real    0m6,065s
+user    0m5,968s
+sys     0m0,100s
+\end{lstlisting}
+
+\begin{lstlisting}
+time md5sum 1GB.zip
+286e80b3b7420263038ab06d76774043  1GB.zip
+
+real    0m1,844s
+user    0m1,732s
+sys     0m0,108s
+\end{lstlisting}
+
+The 'time' command is described in more detail in the linux manual \footnote{http://man7.org/linux/man-pages/man7/time.7.html}.
+\begin{itemize}
+        \item 'real' The total time taken for the process to execute
+        \item 'user' The amount of CPU time spent in user mode (Outside the kernel) within the process
+        \item 'sys' The amount of CPU time spent in the kernel within the process
+\end{itemize}
+
+The SHA256 algorithm took a total of 6,065 seconds to run. The MD5 algorithm took a total of 1,844 seconds to run. This makes the MD5 algorithm 4,221 seconds faster.
 
 
 %----------------------------------------------------
 %-------------- EXERCISE 2
 %----------------------------------------------------
+\newpage
 \section{Exercise 2: File Headers}
 %----------------------------------------------------
 %-------------- EXERCISE 3
 %----------------------------------------------------
+\newpage
 \section{Exercise 3: Anti Files Forensics}
 %----------------------------------------------------
 %-------------- EXERCISE 4
 %----------------------------------------------------
+\newpage
 \section{Exercise 4: Acquisition}
 %----------------------------------------------------
 %-------------- EXERCISE 5
 %----------------------------------------------------
+\newpage
 \section{Exercise 5: }
 %----------------------------------------------------
 %-------------- EXERCISE 6
 %----------------------------------------------------
+\newpage
 \section{Exercise 6 - Hashing}
 
 %\bibliographystyle{plain}
