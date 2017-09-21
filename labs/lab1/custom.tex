@@ -6,7 +6,6 @@
 % replaces "Contents" with "Innehållsförteckning, "References"
 % with "Litteraturförteckning", etc.
 \usepackage[swedish,english]{babel}
-
 \usepackage[T1]{fontenc}
 
 % The package "inputenc" lets us specify what character encoding
@@ -28,6 +27,8 @@
 \usepackage{listings}
 \usepackage{dirtree}
 \usepackage{color}
+
+\graphicspath{{images/}}
 
 % These two lines set up options for the listings package and
 % can be removed if you don't use it, or changed if you, e.g,
@@ -288,6 +289,8 @@ The SHA256 algorithm took a total of 6,065 seconds to run. The MD5 algorithm too
 %----------------------------------------------------
 \newpage
 \section{Exercise 2: File Headers}
+In the folder Exercise3\textunderscore Anti\textunderscore Files\textunderscore Forensics a number of unidentified files where found.
+In order to make sure what kind of files they are we use three different tools for file identification and cross check their result.
 \subsection{file}
 In Kali Linux you can get information about files using the 'file' command. While standing in the 'Exercise2\textunderscore File\textunderscore Identification' folder and
 running the 'file *' command we get the following result:
@@ -335,7 +338,90 @@ Doing this we get the following result:
 \end{center}
 
 \subsection{TrId}
+TrIdNet\footnote{\url{http://mark0.net/soft-tridnet-e.html}} is another tool which presents it's findings in a GUI. Below are the result for all the files.
+\begin{figure}
+        \caption{File 01}
+        \centering
+        \includegraphics[width=0.5\textwidth]{01}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{02}
+        \caption{File 02}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{03}
+        \caption{File 03}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{04}
+        \caption{File 04}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{05}
+        \caption{File 05}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{06}
+        \caption{File 06}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{07}
+        \caption{File 07}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{08}
+        \caption{File 08}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{09}
+        \caption{File 09}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{10}
+        \caption{File 10}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{11}
+        \caption{File 11}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{12}
+        \caption{File 12}
+\end{figure}
 
+
+\subsection{Conclusion}
+After identifying the file types with the three tools mentioned above, the files where opened with the corresponding program for further examination.
+The following table presents the conclusion of the findings:
+\begin{center}
+        \begin{tabular}{|l|p{10cm}|}
+                \hline
+                \textbf{File} & \textbf{Description} \\ \hline
+                01 & JPEG image of a hangar filled with airplanes \\ \hline
+                02 & GIF image of a generator or a motor\\ \hline
+                03 & A windows shortcut for URL address containing \url{http://www.dc3.mil/challenge} \\ \hline
+                04 & ZIP archive containing the tool EXIF.exe and documentation \\ \hline
+                05 & ZIP archive containing Chrome plugin and install files \\ \hline
+                06 & ZLIb archive - unknown contents \\ \hline
+                07 & Red hat package manager archive \\ \hline
+                08 & Nvidia control panel help file \\ \hline
+                09 & MIDI file with the song Carmina Burana - O Fortuna \\ \hline
+                10 & README file about Microsoft Check File Integrity Verifier \\ \hline
+                11 & OLE file with a README about the tool Robocopy \\ \hline
+                12 & .torrent file for Ubuntu ISO (AMD64 version) \\ \hline
+        \end{tabular}
+\end{center}
 %----------------------------------------------------
 %-------------- EXERCISE 3
 %----------------------------------------------------
