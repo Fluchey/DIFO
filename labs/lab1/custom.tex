@@ -429,6 +429,40 @@ The following table presents the conclusion of the findings:
 %----------------------------------------------------
 \newpage
 \section{Exercise 3: Anti Files Forensics}
+Inside the folder Exercise3\textunderscore Anti\textunderscore Files\textunderscore Forensics. Two files named 'c.mp3' and 'Suspicious\textunderscore file' where present. The hash sums for both files are listed below:
+\begin{lstlisting}
+sha256sum *
+83a15326cf9066a36defbe4f8a0633ec16867999c5910257807493ce250a3548  c.mp3
+cec6534e8ddc4f5f9e9b2a0cedb438a8419a5ffd08ecfe059467630f624d5b1a  Suspicious_File
+
+md5sum *
+670a8c0db494ced4882b44b27dbd6af2  c.mp3
+63017bb2a213fa440191b204929ab0f7  Suspicious_File
+\end{lstlisting}
+More information about the files can be obtained by using the file command:
+
+\begin{lstlisting}
+c.mp3: Audio file with ID3 version 2.255.216, unsynchronized frames, extended header, experimental, footer present
+
+Suspicious_File: Composite Document File V2 Document, Cannot read section info
+\end{lstlisting}
+
+\subsection{Foremost}
+Using the Linux tool foremost\footnote{\url{https://en.wikipedia.org/wiki/Foremost_(software)}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %----------------------------------------------------
 %-------------- EXERCISE 4
 %----------------------------------------------------
