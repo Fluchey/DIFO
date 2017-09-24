@@ -50,7 +50,7 @@
       numbers=none,
         numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
-    commentstyle=\color{dkgreen},
+    commentstyle=\color{red},
       stringstyle=\color{mauve},
         breaklines=true,
   breakatwhitespace=true,
@@ -147,13 +147,13 @@ In order to maintain the chain of custody and to uniquely identify all files, th
 where calculated for all the files in the folder Exercise1\textunderscore Hashing. In Kali Linux\footnote{\url{https://www.kali.org/}}
 it is possible to calculate the hash sum of a file using the bash shell \footnote{\url{https://en.wikipedia.org/wiki/Bash_(Unix_shell)}}.
 For example, if you type the command:
-\begin{lstlisting}
+\begin{lstlisting}[caption= calculate sha256 sum of all files in folder]
 sha256sum *
 \end{lstlisting}
 It will calculate and display the hash sum for the SHA256 algorithm for all the files in the folder you are currently standing.
 This resulted in the following hash sums:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption= Result of sha256 and md5sum]
 sha256sum *
 1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  erase
 1316543942a8c6cd754855500cd37068edbbd8b31c4979d2825a4e799fed6102  erase.exe
@@ -177,19 +177,19 @@ An efficient way for matching hash sums is also possible using the same command,
 we can quickly check if a provided hash sum match with the file we are checking. First we need to create a new file with the hash sum for
 all the files in the folder:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption= Save result in new file]
 sha256sum * > checksums.chk
 \end{lstlisting}
 
 This will create a new file named 'checksums.chk' which contains all the hash sums for the files in the folder. Then we run the command:
 
-\begin{lstlisting}
-sha256sum -c checksums.chk
+\begin{lstlisting}[caption=Check if files il folder match with files in list]
+
 \end{lstlisting}
 
 The output should be the following:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Output from Example above]
 erase: OK
 erase.exe: OK
 hello: OK
@@ -203,20 +203,20 @@ Which indicates that all the files currently stored in 'checksums.chk' match wit
 Now lets say that we have a specific file of interest which we know the hash sum of and we want to find out if the file is present on a computer.
 This can be achieced by using the following command:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption= Command for finding file with hash sum]
 find . -type f -exec sha256sum {} + | grep '^SHA256SUM'
 \end{lstlisting}
 
 {\footnotesize *Note that you need to replace 'SHA256SUM' with the actual hash value of the file}\\\\
 This will search through the specified folder recursively for correlating SHA256 sums. If we run the command:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Finding files with hash sum]
 find . -type f -exec sha256sum {} + | grep '^1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56'
 \end{lstlisting}
 
 Which is the SHA256 sum of the file 'erase' mentioned above. We get the output:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Result from above example]
 1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  ./erase
 1c4ff4e490b15b2b214f26c5654decccbcbea9eb900f88649dc7b1e42341be56  ./hello (4)
 \end{lstlisting}
@@ -233,7 +233,7 @@ easily find it. Even though the file name is changed the hash sums will be ident
 In this exercise the execution time of the SHA256 and the MD5 algorithm will be compared. The file that is used to compare the times can be found at \url{http://ipv4.download.thinkbroadband.com:8080/1GB.zip}
 And should produce the following hash sums:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Hash sums for file used in exercise]
 sha256sum
 5674e59283d95efe8c88770515a9bbc80cbb77cb67602389fd91def26d26aed2
 
@@ -243,7 +243,7 @@ md5sum
 
 Using the 'stat' command we can get more information about the file:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Result from 'stat' command]
 stat 1GB.zip
       File: 1GB.zip
       Size: 1073741824      Blocks: 2097160    IO Block: 4096   regular file
@@ -257,16 +257,16 @@ stat 1GB.zip
 
 If we want to measure the time it takes to compute tha hash sums we can use the command 'time'.
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Time taken for SHA256]
 time sha256sum 1GB.zip
 5674e59283d95efe8c88770515a9bbc80cbb77cb67602389fd91def26d26aed2  1GB.zip
 
 real    0m6,065s
 user    0m5,968s
 sys     0m0,100s
-\end{lstlisting}
+\end{lstlisting
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Time taken for MD5]
 time md5sum 1GB.zip
 286e80b3b7420263038ab06d76774043  1GB.zip
 
@@ -296,7 +296,7 @@ In order to make sure what kind of files they are we use three different tools f
 In Kali Linux you can get information about files using the 'file' command. While standing in the 'Exercise2\textunderscore File\textunderscore Identification' folder and
 running the 'file *' command we get the following result:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Result from 'file' command]
 file *
 01: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, baseline, precision 8, 792x1024, frames 1
 02: GIF image data, version 87a, 359 x 313
@@ -430,7 +430,7 @@ The following table presents the conclusion of the findings:
 \newpage
 \section{Exercise 3: Anti Files Forensics}
 Inside the folder Exercise3\textunderscore Anti\textunderscore Files\textunderscore Forensics. Two files named 'c.mp3' and 'Suspicious\textunderscore file' where present. The hash sums for both files are listed below:
-\begin{lstlisting}
+\begin{lstlisting}[caption=SHA256 and MD5 sum of files in folder]
 sha256sum *
 83a15326cf9066a36defbe4f8a0633ec16867999c5910257807493ce250a3548  c.mp3
 cec6534e8ddc4f5f9e9b2a0cedb438a8419a5ffd08ecfe059467630f624d5b1a  Suspicious_File
@@ -439,26 +439,96 @@ md5sum *
 670a8c0db494ced4882b44b27dbd6af2  c.mp3
 63017bb2a213fa440191b204929ab0f7  Suspicious_File
 \end{lstlisting}
-More information about the files can be obtained by using the file command:
+More information about the files could be obtained by using the file command:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Result from 'file' command]
 c.mp3: Audio file with ID3 version 2.255.216, unsynchronized frames, extended header, experimental, footer present
 
 Suspicious_File: Composite Document File V2 Document, Cannot read section info
 \end{lstlisting}
 
 \subsection{Foremost}
-Using the Linux tool foremost\footnote{\url{https://en.wikipedia.org/wiki/Foremost_(software)}}
+Using the Linux tool foremost\footnote{\url{https://en.wikipedia.org/wiki/Foremost_(software)}} it was discovered that the files contained other content than the file ending indicated.
+
+\subsubsection{c.mp3}
+Using foremost on the file 'c.mp3' one additional .jpg file were found.
+\begin{lstlisting}[caption= foremost file 'c']
+foremost c.mp3 -v -o c
+
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sun Sep 24 16:11:49 2017
+Invocation: foremost c.mp3 -v -o c
+Output directory: /home/fluchey/Documents/Skola/DIFO/Lab1/Exercise3_Anti_Files_Forensics/c
+Configuration file: /etc/foremost.conf
+Processing: c.mp3
+|------------------------------------------------------------------
+File: c.mp3
+Start: Sun Sep 24 16:11:49 2017
+Length: 18 KB (19332 bytes)
+
+Num      Name (bs=512)         Size      File Offset     Comment
+
+0:      00000000.jpg          18 KB               3
+*|
+Finish: Sun Sep 24 16:11:49 2017
+
+1 FILES EXTRACTED
+
+jpg:= 1 # Here we can see that one additional .jpg file were extracted
+------------------------------------------------------------------
+
+Foremost finished at Sun Sep 24 16:11:49 2017
+\end{lstlisting}
+
+Further examination of the extracted file showed that it was an image of the Actress Keira Knightley\footnote{\url{http://www.imdb.com/name/nm0461136/}} and the file was named '00000000.jpg'.
+\begin{figure}[ht]
+        \centering
+        \includegraphics{00000000.jpg}
+        \caption{Extracted picture from 'c.mp3'}
+\end{figure}
 
 
 
 
 
+\subsubsection{Suspicious\textunderscore File}
 
 
 
+Using foremost on the file 'Suspicious\textunderscore File' one additional .ole\footnote{\url{https://en.wikipedia.org/wiki/Object_Linking_and_Embedding}} file were found
 
+\begin{lstlisting}[caption= foremost file 'Suspicious\textunderscore File']
+foremost Suspicious_File -v -o sus
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
 
+Foremost started at Sun Sep 24 16:19:26 2017
+Invocation: foremost Suspicious_File -v -o sus
+Output directory: /home/fluchey/Documents/Skola/DIFO/Lab1/Exercise3_Anti_Files_Forensics/sus
+Configuration file: /etc/foremost.conf
+Processing: Suspicious_File
+|------------------------------------------------------------------
+File: Suspicious_File
+Start: Sun Sep 24 16:19:26 2017
+Length: 1 MB (1304576 bytes)
+
+Num      Name (bs=512)         Size      File Offset     Comment
+
+0:      00000000.ole          12 KB               0
+*|
+Finish: Sun Sep 24 16:19:26 2017
+
+1 FILES EXTRACTED
+
+ole:= 1 # Here we can see that on .ole file were extracted
+------------------------------------------------------------------
+
+Foremost finished at Sun Sep 24 16:19:26 2017
+\end{lstlisting}
+The extracted .ole file failed to open in any recommended software. Both 'Suspicious\textunderscore File' and the extracted .ole file were submitted to malware scanning sites VirusTotal\footnote{\url{https://www.virustotal.com/\#/home/upload}}
+ and Cryptam\footnote{\url{https://www.cryptam.com/}}
 
 
 
