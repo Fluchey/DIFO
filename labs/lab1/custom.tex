@@ -312,6 +312,7 @@ file *
 12: BitTorrent file
 \end{lstlisting}
 
+
 This gives us information of all the files in the folder.
 
 \subsection{HexEdit}
@@ -485,7 +486,7 @@ Foremost finished at Sun Sep 24 16:11:49 2017
 Further examination of the extracted file showed that it was an image of the Actress Keira Knightley\footnote{\url{http://www.imdb.com/name/nm0461136/}} and the file was named '00000000.jpg'.
 \begin{figure}[ht]
         \centering
-        \includegraphics{00000000.jpg}
+        \includegraphics[width=0.5\textwidth]{00000000.jpg}
         \caption{Extracted picture from 'c.mp3'}
 \end{figure}
 
@@ -527,8 +528,22 @@ ole:= 1 # Here we can see that on .ole file were extracted
 
 Foremost finished at Sun Sep 24 16:19:26 2017
 \end{lstlisting}
-The extracted .ole file failed to open in any recommended software. Both 'Suspicious\textunderscore File' and the extracted .ole file were submitted to malware scanning sites VirusTotal\footnote{\url{https://www.virustotal.com/\#/home/upload}}
- and Cryptam\footnote{\url{https://www.cryptam.com/}}
+The extracted .ole file failed to open in any recommended software. Both 'Suspicious\textunderscore File' and the extracted .ole file were submitted to malware scanning site Cryptam\footnote{\url{https://www.cryptam.com/}}.
+Cryptam discovered that 'Suspicious\textunderscore File' contained an embedded executable.
+
+\begin{figure}[ht]
+        \centering
+        \includegraphics[width=\textwidth]{cryptam_sus}
+        \caption{Cryptam result of 'Suspicious\textunderscore File'}
+\end{figure}
+
+And it found the .ole file to be suspicious
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{images/cryptam_ole}
+  \caption{Cryptam result of '00000000.ole'}
+\end{figure}
 
 
 
@@ -542,12 +557,42 @@ The extracted .ole file failed to open in any recommended software. Both 'Suspic
 %-------------- EXERCISE 5
 %----------------------------------------------------
 \newpage
-\section{Exercise 5: }
+\section{Exercise 5: Cracking }
 %----------------------------------------------------
 %-------------- EXERCISE 6
 %----------------------------------------------------
 \newpage
-\section{Exercise 6 - Hashing}
+\section{Exercise 6 - Steganography}
+in the folder Exercise6\textunderscore Steganography two files named 'c1l.png' and 'c2l.png' were present.
+
+\begin{lstlisting}[caption= SHA256 and MD5 sum of files in Exercise6\textunderscore Steganography]
+sha256sum *
+d8ad7abb90ee967108f37d3b702016827219692e25fc840fb7e737ba0b7eab00  c1l.png
+822e27042277d9588d699adcf1f3da7428cad7de9506eda7ae3644f858574e1f  c2l.png
+
+md5sum *
+601450fd443b42f4ece0e3f001ed73b3  c1l.png
+b914cc2043a6d5b31ff4bb6f5f1291fc  c2l.png
+\end{lstlisting}
+
+The file ending '.png' indicate that the files are images.
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{images/c1l}
+  \caption{Image of 'c1l.png'}
+  \centering
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{images/c2l}
+  \caption{Image of 'c2l.png'}
+  \centering
+\end{figure}
+
+
+
+
+
 
 %\bibliographystyle{plain}
 %\bibliography{bibtex}
