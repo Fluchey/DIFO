@@ -1,0 +1,3 @@
+stepic -d -i ~/Desktop/Lab1/Exercise6_Steganography/c1l.png -o c1lout
+
+stepic -d -i ~/Desktop/Lab1/Exercise6_Steganography/c1l.png -o c2lout
