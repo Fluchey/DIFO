@@ -628,9 +628,25 @@ Different character sets were tried to see if the text could be understood.\\
 Which is an address for the TOR network, an adress for an online pharmacy.
 
 
+To find out more information about the two files and to find if there was any more hidden messages, a comparation of the two files were performed with the command:\\
+
+\begin{lstlisting}
+compare c1l.png c2l.png compareresult.png
+\end{lstlisting}
+
+Which produces a new image containing the result of the the image comparation. I.e. the resulting differences between the two files. 
+
+\begin{figure}[ht]
+	\includegraphics[width=\textwidth]{images/compareresult.png}
+	\caption{Image of 'compareresult.png'}
+	\centering
+\end{figure}
+
+The red portion shows a detected difference between the two files. There are differences between the two files and it is contained in the red highlighted portion in the above image.
 
 
 
+This leads us to the conclusion that cl1.png is the original and that c2l.png is the only image containing a steganographic hidden message.
 
 
 
