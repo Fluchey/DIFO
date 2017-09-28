@@ -10,3 +10,6 @@
 *.fot
 *.cb
 *.cb2
+custom.pdf
+*.gz
+*.fdb_latexmk
