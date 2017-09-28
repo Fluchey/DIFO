@@ -593,8 +593,10 @@ The file ending '.png' indicate that the files are images. Opening them in an im
   \centering
 \end{figure}
 
-The files were opened in a Hex Editor (\textbf{Bless}) to visually examine them. Nothing out of the ordinary was found for either file.
-The files were also opened in \textbf{pngcheck} and the following was reported:
+The files were opened in the hex editor Bless\footnote{\url{http://www.forensicswiki.org/wiki/Bless}} 
+to visually examine them. Nothing out of the ordinary was found for either file.
+The files were also opened in Pngcheck\footnote{\url{http://www.libpng.org/pub/png/apps/pngcheck.html}}
+and the following was reported:
 
 
 \begin{lstlisting}[caption=c1l.png]
@@ -605,7 +607,8 @@ No errors detected in c1l.png (7 chunks, 92.7% compression).
 No errors detected in c2l.png (3 chunks, 92.7% compression).
 \end{lstlisting}
 
-Opening the files in the program \textbf{stepic} with the command:
+Opening the files in the program Stepic\footnote{\url{http://domnit.org/stepic/doc/}}
+with the command:
 
 \begin{lstlisting}[caption=stepic command]
 
@@ -617,18 +620,24 @@ stepic -d -i ~/Desktop/Lab1/Exercise6_Steganography/c2l.png -o c2lout
 
 Reveals the following information:\\
 
-\underline{Output for c1l.png, contains:}\\The text \textbackslash FF (while viewed in Linux/Mac OS)
-xFF (while viewed through Notepad++ in Windows)
+\underline{Output for c1l.png, contains:}\\
+\newline
+The text \textbackslash FF (while viewed in Linux/Mac OS)\\xFF (while viewed through Notepad++
+\footnote{\url{https://notepad-plus-plus.org/}}
+in Windows)
+\newline
 
 Different character sets were tried to see if the text could be understood.\\
 
 
-\underline{Output for c2l.png, contains:}\\ \url{http://xdsa5xcrrrxxxolc.onion/}
+\underline{Output for c2l.png, contains:}\\
+\newline
+\url{http://xdsa5xcrrrxxxolc.onion/}\\
 
-Which is an address for the TOR network, an adress for an online pharmacy.
+Which is an address for the TOR network, an address for an online pharmacy.
 
 
-To find out more information about the two files and to find if there was any more hidden messages, a comparation of the two files were performed with the command:\\
+To find out more information about the two files and to find if there was any more hidden messages, a comparison of the two files were performed with the command:\\
 
 \begin{lstlisting}
 compare c1l.png c2l.png compareresult.png
@@ -646,7 +655,7 @@ The red portion shows a detected difference between the two files. There are dif
 
 
 
-This leads us to the conclusion that cl1.png is the original and that c2l.png is the only image containing a steganographic hidden message.
+This leads to the conclusion that cl1.png is the original and that c2l.png is the only image containing a steganographic hidden message.
 
 
 
