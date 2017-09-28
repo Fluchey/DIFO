@@ -69,7 +69,8 @@
 
 % Write the name and user namn for all participants in the group here.
 % Separate persons with \and
-\author{Anton Fluch \url{anfl4215} \and Johan Bäckström \url{jobc5829}}
+\author{Anton Fluch \url{anfl4215} \and Johan Bäckström \url{jobc5829} \and{\textbf{Group 29}}}
+
 
 \begin{document}
 
@@ -558,6 +559,8 @@ And it found the .ole file to be suspicious
 %----------------------------------------------------
 \newpage
 \section{Exercise 5: Cracking }
+
+
 %----------------------------------------------------
 %-------------- EXERCISE 6
 %----------------------------------------------------
@@ -620,22 +623,25 @@ stepic -d -i ~/Desktop/Lab1/Exercise6_Steganography/c2l.png -o c2lout
 
 Reveals the following information:\\
 
-\underline{Output for c1l.png, contains:}\\
-\newline
-The text \textbackslash FF (while viewed in Linux/Mac OS)\\xFF (while viewed through Notepad++
-\footnote{\url{https://notepad-plus-plus.org/}}
-in Windows)
-\newline
+\underline{Output for c1l.png, contains:}
+\begin{itemize}
+	\item \textbackslash FF (while viewed in GEdit
+	\footnote{\url{https://wiki.gnome.org/Apps/Gedit}} 
+	Linux/Mac OS)
+	
+	\item xFF (while viewed through Notepad++
+	\footnote{\url{https://notepad-plus-plus.org/}}
+	in Windows)
+\end{itemize}
 
-Different character sets were tried to see if the text could be understood.\\
+This same symbol was found when using stepic on a normal, unaltered .png, leading to the assumption that this is a symbol found in the PNG file format. Different character sets were tried to see if the text could be understood.\\
 
 
 \underline{Output for c2l.png, contains:}\\
 \newline
 \url{http://xdsa5xcrrrxxxolc.onion/}\\
 
-Which is an address for the TOR network, an address for an online pharmacy.
-
+Which is an address for the TOR network. This specific address is an address for an online pharmacy.\\
 
 To find out more information about the two files and to find if there was any more hidden messages, a comparison of the two files were performed with the command:\\
 
@@ -645,7 +651,7 @@ compare c1l.png c2l.png compareresult.png
 
 Which produces a new image containing the result of the the image comparation. I.e. the resulting differences between the two files.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\includegraphics[width=\textwidth]{images/compareresult.png}
 	\caption{Image of 'compareresult.png'}
 	\centering
@@ -653,6 +659,7 @@ Which produces a new image containing the result of the the image comparation. I
 
 The red portion shows a detected difference between the two files. There are differences between the two files and it is contained in the red highlighted portion in the above image.
 
+\newpage
 The files were also examined by ExifTool\footnote{\url{https://en.wikipedia.org/wiki/ExifTool}}. The output from
 ExifTool differed and som information were not present in 'c2l.png'
 
