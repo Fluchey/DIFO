@@ -13,3 +13,4 @@
 custom.pdf
 *.gz
 *.fdb_latexmk
+*.DS_Store
