@@ -183,8 +183,8 @@ sha256sum * > checksums.chk
 
 This will create a new file named 'checksums.chk' which contains all the hash sums for the files in the folder. Then we run the command:
 
-\begin{lstlisting}[caption=Check if files il folder match with files in list]
-
+\begin{lstlisting}[caption=Check if files in folder match with files in list]
+sha256sum -c checksums.chk
 \end{lstlisting}
 
 The output should be the following:
