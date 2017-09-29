@@ -612,8 +612,34 @@ f77f0c2ea19035ace1d47b266245984d  casssh.pdf
 fbf3b26fcf8e9fe4ec2e70175255e36c  wallet1.dat
 91abbea64a2a922c6512232ca8d68fa1  wallet2
 \end{lstlisting}
-Using Password Recovery Toolkit \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}, which is used to recover passwords,
-one of the files in the folder were cracked.
+Using Password Recovery Toolkit \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}, which is used to recover passwords.
+
+The first file to be tried was \textbf{casssh.pdf}.\\\\
+Using a big compilation of Swedish words\footnote{SVENSK-ORDLISTA-COMPILATION.txt} provided by the CS2Labs, as well as rules to append digits after and prepend digits before the words from the wordlist, the file was succesfully cracked.
+
+The second file to be tried was untitled.docx. PRTK \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}
+was set to try the same rules that worked for casssh.pdf, i.e. using the words from the dictionary as-is and append up to 2 digits and prepend up to 2 digits. However, this attack tried very few passwords per second, (averaging 10-50) so this attack was aborted.
+
+After this failed attempt, Hashcat\footnote{hashcat 3.6.0} was used to try to crack the file untitled\textunderscore hash.txt, which is the hash sum extracted from the word file.
+
+Using a hybrid mask attack, to append two digits and prepend two digits together with the same dictionary as before, as seen below:
+
+\begin{lstlisting}
+.\hashcat64.exe -a 7 -w 3 -m 9600 --status "C:\Users\Johan\Goo
+gle Drive\DSV 5 HT-17\DIFO\Lab files\Lab1 original files\Exercise5_Cracking\untitled_hash.txt" ?d?d "C:\Users\Johan\Google Drive\DSV
+5 HT-17\DIFO\Lab files\swedish_dict\SVENSK-ORDLISTA-COMPILATION.txt"
+\end{lstlisting}
+
+This attack failed to find any password.
+
+\begin{lstlisting}
+.\hashcat64.exe -a 6 -w 3 -m 9600 --status "C:\Users\Johan\Goo
+gle Drive\DSV 5 HT-17\DIFO\Lab files\Lab1 original files\Exercise5_Cracking\untitled_hash.txt" "C:\Users\Johan\Google Drive\DSV 5 HT
+-17\DIFO\Lab files\swedish_dict\SVENSK-ORDLISTA-COMPILATION.txt" ?d?d
+\end{lstlisting}
+
+
+
 \begin{center}
         \begin{tabular}{|l|p{5cm}|}
                 \hline
