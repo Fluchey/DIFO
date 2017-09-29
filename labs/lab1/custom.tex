@@ -174,6 +174,41 @@ da5c61e1edc0f18337e46418e48c1290  hello (4)
 cdc47d670159eef60916ca03a9d4a007  hello.exe
 \end{lstlisting}
 
+For the file calc.exe, the hash sum was calculated using md5deep64.exe with the following command:
+
+\begin{lstlisting}[caption= Command for md5deep64.exe]
+	C:\Users\cs2lab\Desktop\Forensic_tools\md5deep-4.4>findstr /i 10e4a1d2132ccb5c6759f038cdb6f3c9 "c:\users\cs2lab\Desktop\Shared Folder\NSRL_Hash_sums_Database.txt"
+\end{lstlisting}
+
+The hash sum was searched for within the file 
+NSRL\textunderscore 
+hash\textunderscore
+sums\textunderscore
+Database.txt
+\newpage
+\begin{lstlisting}[caption= Result for findstr]
+	"42D36EEB2140441B48287B7CD30B38105986D68F","10E4A1D2132CCB5C6759F038CDB6F3C9",
+	"967E5DDE","calc.exe",918528,19417,"358",""
+	
+	"42D36EEB2140441B48287B7CD30B38105986D68F","10E4A1D2132CCB5C6759F038CDB6F3C9",
+	"967E5DDE","calc.exe",918528,19423,"358","D"
+	
+	"42D36EEB2140441B48287B7CD30B38105986D68F","10E4A1D2132CCB5C6759F038CDB6F3C9",
+	"967E5DDE","calc.exe",918528,19487,"358","D"
+	
+	"42D36EEB2140441B48287B7CD30B38105986D68F","10E4A1D2132CCB5C6759F038CDB6F3C9",
+	"967E5DDE","calc.exe",918528,22270,"358",""
+	
+	"42D36EEB2140441B48287B7CD30B38105986D68F","10E4A1D2132CCB5C6759F038CDB6F3C9",
+	"967E5DDE","calc.exe",918528,22273,"358",""
+	
+	"42D36EEB2140441B48287B7CD30B38105986D68F","10E4A1D2132CCB5C6759F038CDB6F3C9",
+	"967E5DDE","calc.exe",918528,23807,"358",""
+\end{lstlisting}
+
+This means that we found the md5 hash sum for calc.exe within that file.\\
+
+
 An efficient way for matching hash sums is also possible using the same command, but we need to provide an option to it. Using the '-c' option
 we can quickly check if a provided hash sum match with the file we are checking. First we need to create a new file with the hash sum for
 all the files in the folder:
@@ -184,7 +219,7 @@ sha256sum * > checksums.chk
 
 This will create a new file named 'checksums.chk' which contains all the hash sums for the files in the folder. Then we run the command:
 
-\begin{lstlisting}[caption=Check if files il folder match with files in list]
+\begin{lstlisting}[caption=Check if files in folder match with files in list]
 
 \end{lstlisting}
 
