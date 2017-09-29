@@ -69,8 +69,7 @@
 
 % Write the name and user namn for all participants in the group here.
 % Separate persons with \and
-\author{Anton Fluch \url{anfl4215} \and Johan Bäckström \url{jobc5829} \and{\textbf{Group 29}}}
-
+\author{Anton Fluch \url{anfl4215} \and Johan Bäckström \url{jobc5829}}
 
 \begin{document}
 
@@ -316,7 +315,6 @@ file *
 
 This gives us information of all the files in the folder.
 
-\subsection{HexEdit}
 On windows we can use the tool HexEdit\footnote{\url{http://hexedit.com/}} to get information about the files in hexadecimal form.
 We can then identify the hexadecimal header of the file and check on the website of Gary Kessler\footnote{\url{http://www.garykessler.net/library/file_sigs.html}} for a matching file header.
 Doing this we get the following result:
@@ -559,6 +557,50 @@ And it found the .ole file to be suspicious
 %----------------------------------------------------
 \newpage
 \section{Exercise 5: Cracking }
+The folder Exercise5\textunderscore Cracking contained 7 files
+\begin{lstlisting}[caption=Content of Exercise5\textunderscore Cracking folder]
+sha256sum *
+126b46eb0c3891f86f38af95b810ed083f242e5aaaa5bbd84caf9f1ee28af6a3  Untitled 1.ods
+a5ba8562717a9c128bdb87d3b0b327cea7bb24f33fd599d5de8fc6d41c174d02  casssh.pdf
+2fe1cd6a80f6609efbc4fc142ce552ef46155f0fe1b0b765f0b12ea7fd5d8f8b  ht.zip.tar.gpg
+c28739a4507ca3f39ac0cf1a06de6f58d410b3a1fb8724268264d1cbe67e8112  untitled.docx
+c0b382ff5916cae9fb773193b6d225329724982a8f53ed9ba9bbbef001ba45f4  untitled_hash.txt
+6c073f77c40ca84a1ada73452633b58359d055e37ae75dcec0f663538db859a5  wallet1.dat
+cb17a6d50d1992fb77131c3026e375404a6136445ddfa605a8c5e38d24b890a1  wallet2
+
+md5sum *
+0a4532f87c41c31f1b716cd21ea8fa51  Untitled 1.ods
+f77f0c2ea19035ace1d47b266245984d  casssh.pdf
+159ef8f471caef32db49dc9b331e10a5  ht.zip.tar.gpg
+3a9b988f1496b2598cf08023603bcf3c  untitled.docx
+94ad3d937cb04ea0772bfbd0e20564bb  untitled_hash.txt
+fbf3b26fcf8e9fe4ec2e70175255e36c  wallet1.dat
+91abbea64a2a922c6512232ca8d68fa1  wallet2
+\end{lstlisting}
+Using Password Recovery Toolkit \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}, which is used to recover passwords,
+one of the files in the folder were cracked.
+\begin{center}
+        \begin{tabular}{|l|p{5cm}|}
+                \hline
+                \textbf{File} & \textbf{Password} \\ \hline
+                 Untitled 1.ods    & Not found \\ \hline
+                 casssh.pdf        & 01frid \\ \hline
+                 ht.zip.tar.gpg    & Not found \\ \hline
+                 untitled.docx     &  Not found \\ \hline
+                 untitled\textunderscore hash.txt &  Not found \\ \hline
+                 wallet1.dat &  Not found \\ \hline
+                 wallet2    &  Not found \\ \hline
+        \end{tabular}
+\end{center}
+
+
+
+
+
+
+
+
+
 
 
 %----------------------------------------------------
@@ -596,7 +638,7 @@ The file ending '.png' indicate that the files are images. Opening them in an im
   \centering
 \end{figure}
 
-The files were opened in the hex editor Bless\footnote{\url{http://www.forensicswiki.org/wiki/Bless}} 
+The files were opened in the hex editor Bless\footnote{\url{http://www.forensicswiki.org/wiki/Bless}}
 to visually examine them. Nothing out of the ordinary was found for either file.
 The files were also opened in Pngcheck\footnote{\url{http://www.libpng.org/pub/png/apps/pngcheck.html}}
 and the following was reported:
@@ -623,25 +665,22 @@ stepic -d -i ~/Desktop/Lab1/Exercise6_Steganography/c2l.png -o c2lout
 
 Reveals the following information:\\
 
-\underline{Output for c1l.png, contains:}
-\begin{itemize}
-	\item \textbackslash FF (while viewed in GEdit
-	\footnote{\url{https://wiki.gnome.org/Apps/Gedit}} 
-	Linux/Mac OS)
-	
-	\item xFF (while viewed through Notepad++
-	\footnote{\url{https://notepad-plus-plus.org/}}
-	in Windows)
-\end{itemize}
+\underline{Output for c1l.png, contains:}\\
+\newline
+The text \textbackslash FF (while viewed in Linux/Mac OS)\\xFF (while viewed through Notepad++
+\footnote{\url{https://notepad-plus-plus.org/}}
+in Windows)
+\newline
 
-This same symbol was found when using stepic on a normal, unaltered .png, leading to the assumption that this is a symbol found in the PNG file format. Different character sets were tried to see if the text could be understood.\\
+Different character sets were tried to see if the text could be understood.\\
 
 
 \underline{Output for c2l.png, contains:}\\
 \newline
 \url{http://xdsa5xcrrrxxxolc.onion/}\\
 
-Which is an address for the TOR network. This specific address is an address for an online pharmacy.\\
+Which is an address for the TOR network, an address for an online pharmacy.
+
 
 To find out more information about the two files and to find if there was any more hidden messages, a comparison of the two files were performed with the command:\\
 
@@ -651,7 +690,7 @@ compare c1l.png c2l.png compareresult.png
 
 Which produces a new image containing the result of the the image comparation. I.e. the resulting differences between the two files.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\includegraphics[width=\textwidth]{images/compareresult.png}
 	\caption{Image of 'compareresult.png'}
 	\centering
@@ -659,7 +698,6 @@ Which produces a new image containing the result of the the image comparation. I
 
 The red portion shows a detected difference between the two files. There are differences between the two files and it is contained in the red highlighted portion in the above image.
 
-\newpage
 The files were also examined by ExifTool\footnote{\url{https://en.wikipedia.org/wiki/ExifTool}}. The output from
 ExifTool differed and som information were not present in 'c2l.png'
 
