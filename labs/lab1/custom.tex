@@ -587,7 +587,7 @@ And it found the .ole file to be suspicious
 %----------------------------------------------------
 \newpage
 \section{Exercise 4: Acquisition}
-See seperate file named \textt{'DIFO2017\textunderscore Group29\textunderscore Lab1\textunderscore Report\textunderscore Template\textunderscore B\textunderscore Assignment4'}
+See separate file named 'DIFO2017\textunderscore Group29\textunderscore Lab1\textunderscore Report\textunderscore Template\textunderscore B\textunderscore Assignment4'
 %----------------------------------------------------
 %-------------- EXERCISE 5
 %----------------------------------------------------
@@ -618,7 +618,7 @@ Using Password Recovery Toolkit \footnote{\url{http://accessdata.com/product-dow
 The first file to be tried was \textbf{casssh.pdf}.\\\\
 Using a big compilation of Swedish words\footnote{SVENSK-ORDLISTA-COMPILATION.txt} provided by the CS2Labs, as well as rules to append digits after and prepend digits before the words from the wordlist, the file was succesfully cracked.
 
-The second file to be tried was untitled.docx. PRTK \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}
+The second file to be tried was \textbf{untitled.docx}. PRTK \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}
 was set to try the same rules that worked for casssh.pdf, i.e. using the words from the dictionary as-is and append up to 2 digits and prepend up to 2 digits. However, this attack tried very few passwords per second, (averaging 10-50) so this attack was aborted.
 
 After this failed attempt, Hashcat\footnote{hashcat 3.6.0} was used to try to crack the file untitled\textunderscore hash.txt, which is the hash sum extracted from the word file.
@@ -643,11 +643,10 @@ This attack also failed to find any password.\\
 
 Using hashcat a dictionary attack using top 95 thousand probable passwords\footnote{\url{https://github.com/berzerk0/Probable-Wordlists}} were also tried without success.
 
-The other files were also tried in PRTK but failed to be cracked. According to PRTK with the specified rule sets
-the cracking process would for some files take multiple days to be completed and there was no time for trying
-that in this lab.
+The other files were also tried in PRTK but failed to be cracked. According to PRTK with the specified rule sets and dictionaries, the cracking process would for some files take multiple days to be completed and there was no time for completing that in this lab.\\ The password cracking computers that were supposed to be available to us were unavailable for the entirety of the lab. We could not log on without kicking other users off of the system. \\
 
-In the list below files that were cracked are listed.
+In the list below, the files and any recovered passwords are listed.
+
 \begin{center}
 	\begin{tabular}{|l|p{5cm}|}
 		\hline
