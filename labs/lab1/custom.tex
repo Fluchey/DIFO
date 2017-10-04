@@ -41,26 +41,26 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \def \lstlistingname {Example}
 \lstset{frame=tb,
-  language=Bash,
-    aboveskip=3mm,
-      belowskip=3mm,
-        showstringspaces=false,
-  columns=flexible,
-    basicstyle={\footnotesize\ttfamily},
-      numbers=none,
-        numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-    commentstyle=\color{red},
-      stringstyle=\color{mauve},
-        breaklines=true,
-  breakatwhitespace=true,
-    tabsize=3
-    }
+	language=Bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\footnotesize\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{red},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
 \usepackage{ifpdf}
 \ifpdf
-	\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \else
-	\usepackage{url}
+\usepackage{url}
 \fi
 
 % Change NR and TITLE below to appropriate values
@@ -97,44 +97,44 @@ c4a731672747131b8b457a77178ad386
 When opening the zip file the following folders and files where present:
 
 \dirtree{%
-.1 Lab1.
-.2 Exercise1\textunderscore Hashing.
-.3 erase.
-.3 erase.exe.
-.3 hello.
-.3 hello (2).
-.3 hello (3).
-.3 hello (4).
-.3 hello.exe.
-.2 Exercise2\textunderscore File\textunderscore Identification.
-.3 01.
-.3 02.
-.3 03.
-.3 04.
-.3 05.
-.3 06.
-.3 07.
-.3 08.
-.3 09.
-.3 10.
-.3 11.
-.3 12.
-.2 Exercise3\textunderscore Anti\textunderscore Files\textunderscore Forensics.
-.3 c.mp3.
-.3 Suspicious\textunderscore File.
-.2 Exercise4\textunderscore Acquisition.
-.3 winxp.dvi.
-.2 Exercise5\textunderscore Cracking.
-.3 casssh.pdf.
-.3 ht.zip.tar.gpg.
-.3 Untitled 1.ods.
-.3 untitled.docx.
-.3 untitled\textunderscore hash.txt.
-.3 wallet1.dat.
-.3 wallet2.
-.2 Exercise6\textunderscore Steganography.
-.3 c1l.png.
-.3 c2l.png.
+	.1 Lab1.
+	.2 Exercise1\textunderscore Hashing.
+	.3 erase.
+	.3 erase.exe.
+	.3 hello.
+	.3 hello (2).
+	.3 hello (3).
+	.3 hello (4).
+	.3 hello.exe.
+	.2 Exercise2\textunderscore File\textunderscore Identification.
+	.3 01.
+	.3 02.
+	.3 03.
+	.3 04.
+	.3 05.
+	.3 06.
+	.3 07.
+	.3 08.
+	.3 09.
+	.3 10.
+	.3 11.
+	.3 12.
+	.2 Exercise3\textunderscore Anti\textunderscore Files\textunderscore Forensics.
+	.3 c.mp3.
+	.3 Suspicious\textunderscore File.
+	.2 Exercise4\textunderscore Acquisition.
+	.3 winxp.dvi.
+	.2 Exercise5\textunderscore Cracking.
+	.3 casssh.pdf.
+	.3 ht.zip.tar.gpg.
+	.3 Untitled 1.ods.
+	.3 untitled.docx.
+	.3 untitled\textunderscore hash.txt.
+	.3 wallet1.dat.
+	.3 wallet2.
+	.2 Exercise6\textunderscore Steganography.
+	.3 c1l.png.
+	.3 c2l.png.
 }
 \newpage
 
@@ -312,9 +312,9 @@ sys     0m0,108s
 
 The 'time' command is described in more detail in the linux manual \footnote{\url{http://man7.org/linux/man-pages/man7/time.7.html}}.
 \begin{itemize}
-        \item 'real' The total time taken for the process to execute
-        \item 'user' The amount of CPU time spent in user mode (Outside the kernel) within the process
-        \item 'sys' The amount of CPU time spent in the kernel within the process
+	\item 'real' The total time taken for the process to execute
+	\item 'user' The amount of CPU time spent in user mode (Outside the kernel) within the process
+	\item 'sys' The amount of CPU time spent in the kernel within the process
 \end{itemize}
 
 The SHA256 algorithm took a total of 6,065 seconds to run. The MD5 algorithm took a total of 1,844 seconds to run. This makes the MD5 algorithm 4,221 seconds faster.
@@ -355,86 +355,86 @@ We can then identify the hexadecimal header of the file and check on the website
 Doing this we get the following result:
 
 \begin{center}
-        \begin{tabular}{|l|l|p{5cm}|}
-                \hline
-                \textbf{File} & \textbf{Header} & \textbf{Description} \\ \hline
-                01 & FF D8 & Generic JPEGimage file \\ \hline
-                02 & 47 49 46 38 37 61 & GIF87a (Graphics interchange format file) \\ \hline
-                03 & - & No match on website using header. It is possible to see in HexEdit that it is some kind of Internet shortcut \\ \hline
-                04 & 50 4B 03 04 & ZIP (PKZIP archive file) \\ \hline
-                05 & 50 4B 03 04 & ZIP (PKZIP archive file) \\ \hline
-                06 & 78 01 63 60 & No match on website using header \\ \hline
-                07 & ED AB EE DB & RPM (Redhat Package manager file) \\ \hline
-                08 & 49 54 53 46 & CHI, CHM (Microsoft Compiled HTML Help File) \\ \hline
-                09 & 4D 54 68 64 & MID, MIDI (Musical Instrument Digital Interface (MIDI) sound file) \\ \hline
-                10 & - & No match on website using header. It is possible to see in HexEdit that it is a README file for Microsoft File Checksum integrity Verifier V2.05 \\ \hline
-                11 & D0 CF 11 E0 A1 B1 1A E1 & An Object Linking and Embedding (OLE) Compound File (CF) (i.e., OLECF) file format, known as Compound Binary File format by Microsoft, used by Microsoft Office 97-2003 applications (Word, Powerpoint, Excel, Wizard). \\ \hline
-                12 & - & No match on website using header. In HexEdit you can see a description about a torrent file \\ \hline
-        \end{tabular}
+	\begin{tabular}{|l|l|p{5cm}|}
+		\hline
+		\textbf{File} & \textbf{Header} & \textbf{Description} \\ \hline
+		01 & FF D8 & Generic JPEGimage file \\ \hline
+		02 & 47 49 46 38 37 61 & GIF87a (Graphics interchange format file) \\ \hline
+		03 & - & No match on website using header. It is possible to see in HexEdit that it is some kind of Internet shortcut \\ \hline
+		04 & 50 4B 03 04 & ZIP (PKZIP archive file) \\ \hline
+		05 & 50 4B 03 04 & ZIP (PKZIP archive file) \\ \hline
+		06 & 78 01 63 60 & No match on website using header \\ \hline
+		07 & ED AB EE DB & RPM (Redhat Package manager file) \\ \hline
+		08 & 49 54 53 46 & CHI, CHM (Microsoft Compiled HTML Help File) \\ \hline
+		09 & 4D 54 68 64 & MID, MIDI (Musical Instrument Digital Interface (MIDI) sound file) \\ \hline
+		10 & - & No match on website using header. It is possible to see in HexEdit that it is a README file for Microsoft File Checksum integrity Verifier V2.05 \\ \hline
+		11 & D0 CF 11 E0 A1 B1 1A E1 & An Object Linking and Embedding (OLE) Compound File (CF) (i.e., OLECF) file format, known as Compound Binary File format by Microsoft, used by Microsoft Office 97-2003 applications (Word, Powerpoint, Excel, Wizard). \\ \hline
+		12 & - & No match on website using header. In HexEdit you can see a description about a torrent file \\ \hline
+	\end{tabular}
 \end{center}
 
 \subsection{TrId}
 TrIdNet\footnote{\url{http://mark0.net/soft-tridnet-e.html}} is another tool which presents it's findings in a GUI. Below are the result for all the files.
 \newpage
 \begin{figure}[!ht]
-        \caption{File 01}
-        \centering
-        \includegraphics[width=0.5\textwidth]{01}
+	\caption{File 01}
+	\centering
+	\includegraphics[width=0.5\textwidth]{01}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{02}
-        \caption{File 02}
+	\centering
+	\includegraphics[width=0.5\textwidth]{02}
+	\caption{File 02}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{03}
-        \caption{File 03}
+	\centering
+	\includegraphics[width=0.5\textwidth]{03}
+	\caption{File 03}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{04}
-        \caption{File 04}
+	\centering
+	\includegraphics[width=0.5\textwidth]{04}
+	\caption{File 04}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{05}
-        \caption{File 05}
+	\centering
+	\includegraphics[width=0.5\textwidth]{05}
+	\caption{File 05}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{06}
-        \caption{File 06}
+	\centering
+	\includegraphics[width=0.5\textwidth]{06}
+	\caption{File 06}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{07}
-        \caption{File 07}
+	\centering
+	\includegraphics[width=0.5\textwidth]{07}
+	\caption{File 07}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{08}
-        \caption{File 08}
+	\centering
+	\includegraphics[width=0.5\textwidth]{08}
+	\caption{File 08}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{09}
-        \caption{File 09}
+	\centering
+	\includegraphics[width=0.5\textwidth]{09}
+	\caption{File 09}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{10}
-        \caption{File 10}
+	\centering
+	\includegraphics[width=0.5\textwidth]{10}
+	\caption{File 10}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{11}
-        \caption{File 11}
+	\centering
+	\includegraphics[width=0.5\textwidth]{11}
+	\caption{File 11}
 \end{figure}
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{12}
-        \caption{File 12}
+	\centering
+	\includegraphics[width=0.5\textwidth]{12}
+	\caption{File 12}
 \end{figure}
 
 
@@ -442,22 +442,22 @@ TrIdNet\footnote{\url{http://mark0.net/soft-tridnet-e.html}} is another tool whi
 After identifying the file types with the three tools mentioned above, the files where opened with the corresponding program for further examination.
 The following table presents the conclusion of the findings:
 \begin{center}
-        \begin{tabular}{|l|p{10cm}|}
-                \hline
-                \textbf{File} & \textbf{Description} \\ \hline
-                01 & JPEG image of a hangar filled with airplanes \\ \hline
-                02 & GIF image of a generator or a motor\\ \hline
-                03 & A windows shortcut for URL address containing \url{http://www.dc3.mil/challenge} \\ \hline
-                04 & ZIP archive containing the tool EXIF.exe and documentation \\ \hline
-                05 & ZIP archive containing Chrome plugin and install files \\ \hline
-                06 & ZLIb archive - unknown contents \\ \hline
-                07 & Red hat package manager archive \\ \hline
-                08 & Nvidia control panel help file \\ \hline
-                09 & MIDI file with the song Carmina Burana - O Fortuna \\ \hline
-                10 & README file about Microsoft Check File Integrity Verifier \\ \hline
-                11 & OLE file with a README about the tool Robocopy \\ \hline
-                12 & .torrent file for Ubuntu ISO (AMD64 version) \\ \hline
-        \end{tabular}
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{File} & \textbf{Description} \\ \hline
+		01 & JPEG image of a hangar filled with airplanes \\ \hline
+		02 & GIF image of a generator or a motor\\ \hline
+		03 & A windows shortcut for URL address containing \url{http://www.dc3.mil/challenge} \\ \hline
+		04 & ZIP archive containing the tool EXIF.exe and documentation \\ \hline
+		05 & ZIP archive containing Chrome plugin and install files \\ \hline
+		06 & ZLIb archive - unknown contents \\ \hline
+		07 & Red hat package manager archive \\ \hline
+		08 & Nvidia control panel help file \\ \hline
+		09 & MIDI file with the song Carmina Burana - O Fortuna \\ \hline
+		10 & README file about Microsoft Check File Integrity Verifier \\ \hline
+		11 & OLE file with a README about the tool Robocopy \\ \hline
+		12 & .torrent file for Ubuntu ISO (AMD64 version) \\ \hline
+	\end{tabular}
 \end{center}
 %----------------------------------------------------
 %-------------- EXERCISE 3
@@ -519,9 +519,9 @@ Foremost finished at Sun Sep 24 16:11:49 2017
 
 Further examination of the extracted file showed that it was an image of the Actress Keira Knightley\footnote{\url{http://www.imdb.com/name/nm0461136/}} and the file was named '00000000.jpg'.
 \begin{figure}[ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{00000000.jpg}
-        \caption{Extracted picture from 'c.mp3'}
+	\centering
+	\includegraphics[width=0.5\textwidth]{00000000.jpg}
+	\caption{Extracted picture from 'c.mp3'}
 \end{figure}
 
 
@@ -566,17 +566,17 @@ The extracted .ole file failed to open in any recommended software. Both 'Suspic
 Cryptam discovered that 'Suspicious\textunderscore File' contained an embedded executable.
 
 \begin{figure}[ht]
-        \centering
-        \includegraphics[width=\textwidth]{cryptam_sus}
-        \caption{Cryptam result of 'Suspicious\textunderscore File'}
+	\centering
+	\includegraphics[width=\textwidth]{cryptam_sus}
+	\caption{Cryptam result of 'Suspicious\textunderscore File'}
 \end{figure}
 
 And it found the .ole file to be suspicious
 
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=\textwidth]{images/cryptam_ole}
-  \caption{Cryptam result of '00000000.ole'}
+	\centering
+	\includegraphics[width=\textwidth]{images/cryptam_ole}
+	\caption{Cryptam result of '00000000.ole'}
 \end{figure}
 
 
@@ -587,6 +587,7 @@ And it found the .ole file to be suspicious
 %----------------------------------------------------
 \newpage
 \section{Exercise 4: Acquisition}
+See separate file named 'DIFO2017\textunderscore Group29\textunderscore Lab1\textunderscore Report\textunderscore Template\textunderscore B\textunderscore Assignment4'
 %----------------------------------------------------
 %-------------- EXERCISE 5
 %----------------------------------------------------
@@ -617,7 +618,7 @@ Using Password Recovery Toolkit \footnote{\url{http://accessdata.com/product-dow
 The first file to be tried was \textbf{casssh.pdf}.\\\\
 Using a big compilation of Swedish words\footnote{SVENSK-ORDLISTA-COMPILATION.txt} provided by the CS2Labs, as well as rules to append digits after and prepend digits before the words from the wordlist, the file was succesfully cracked.
 
-The second file to be tried was untitled.docx. PRTK \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}
+The second file to be tried was \textbf{untitled.docx}. PRTK \footnote{\url{http://accessdata.com/product-download/password-recovery-toolkit-prtk-version-8.1.0}}
 was set to try the same rules that worked for casssh.pdf, i.e. using the words from the dictionary as-is and append up to 2 digits and prepend up to 2 digits. However, this attack tried very few passwords per second, (averaging 10-50) so this attack was aborted.
 
 After this failed attempt, Hashcat\footnote{hashcat 3.6.0} was used to try to crack the file untitled\textunderscore hash.txt, which is the hash sum extracted from the word file.
@@ -638,20 +639,26 @@ gle Drive\DSV 5 HT-17\DIFO\Lab files\Lab1 original files\Exercise5_Cracking\unti
 -17\DIFO\Lab files\swedish_dict\SVENSK-ORDLISTA-COMPILATION.txt" ?d?d
 \end{lstlisting}
 
-Using hashcat a dicitionary attack using top 95 thousand probable passwords\footnote{\url{https://github.com/berzerk0/Probable-Wordlists}} were also tried without success.
+This attack also failed to find any password.\\
+
+Using hashcat a dictionary attack using top 95 thousand probable passwords\footnote{\url{https://github.com/berzerk0/Probable-Wordlists}} were also tried without success.
+
+The other files were also tried in PRTK but failed to be cracked. According to PRTK with the specified rule sets and dictionaries, the cracking process would for some files take multiple days to be completed and there was no time for completing that in this lab.\\ The password cracking computers that were supposed to be available to us were unavailable for the entirety of the lab. We could not log on without kicking other users off of the system. \\
+
+In the list below, the files and any recovered passwords are listed.
 
 \begin{center}
-        \begin{tabular}{|l|p{5cm}|}
-                \hline
-                \textbf{File} & \textbf{Password} \\ \hline
-                 Untitled 1.ods    & Not found \\ \hline
-                 casssh.pdf        & 01frid \\ \hline
-                 ht.zip.tar.gpg    & Not found \\ \hline
-                 untitled.docx     &  Not found \\ \hline
-                 untitled\textunderscore hash.txt &  Not found \\ \hline
-                 wallet1.dat &  Not found \\ \hline
-                 wallet2    &  Not found \\ \hline
-        \end{tabular}
+	\begin{tabular}{|l|p{5cm}|}
+		\hline
+		\textbf{File} & \textbf{Password} \\ \hline
+		Untitled 1.ods    & Not found \\ \hline
+		casssh.pdf        & 01frid \\ \hline
+		ht.zip.tar.gpg    & Not found \\ \hline
+		untitled.docx     &  Not found \\ \hline
+		untitled\textunderscore hash.txt &  Not found \\ \hline
+		wallet1.dat &  Not found \\ \hline
+		wallet2    &  Not found \\ \hline
+	\end{tabular}
 \end{center}
 
 
@@ -684,9 +691,9 @@ b914cc2043a6d5b31ff4bb6f5f1291fc  c2l.png
 The file ending '.png' indicate that the files are images. Opening them in an image viewing program confirms that they are in fact images.
 
 \begin{figure}[ht]
-  \includegraphics[width=\textwidth]{images/c1l}
-  \caption{Image of 'c1l.png'}
-  \centering
+	\includegraphics[width=\textwidth]{images/c1l}
+	\caption{Image of 'c1l.png'}
+	\centering
 \end{figure}
 
 
@@ -694,9 +701,9 @@ The file ending '.png' indicate that the files are images. Opening them in an im
 
 
 \begin{figure}[ht]
-  \includegraphics[width=\textwidth]{images/c2l}
-  \caption{Image of 'c2l.png'}
-  \centering
+	\includegraphics[width=\textwidth]{images/c2l}
+	\caption{Image of 'c2l.png'}
+	\centering
 \end{figure}
 
 The files were opened in the hex editor Bless\footnote{\url{http://www.forensicswiki.org/wiki/Bless}}
