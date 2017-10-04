@@ -1,0 +1,53 @@
+Windows is the biggest OS on the market. But when working with forensics you should be familiar with more OS:es
+
+OPERATING SYSTEM
+	Operating systems were originally used as security tools for seperating users on a computer system.
+	> But also allowing for several users to share the resources of on computer
+	Also used to cummunicate between software and hardware
+
+ABSTRACTION LEVELS OF A COMPUTER SYSTEM
+	Applications
+	Service
+	OS
+	Kernel
+	Hardware
+
+BOOTSTRAPPING THE OS
+	When booting a computer the BIOS runs tests to identify and locate the OS on of the devices
+	On the boot device the MBR (offset 0 - 512)
+		446 first bytes are boot manager
+		64 bytes after that = partition table
+		2 last bytes = signature
+
+	BOOTLOADER
+		Loads the operating system from the MBR
+		Examples: GRUB, WINDOWS..
+	
+INTERESTING UNIX FILES
+	/home/username/bash_history
+		Contains previuos commands sent to bash
+
+	/var/spool/cups
+		Contains things about printed things
+
+	/etc/crontab
+		Contains things about scheduled things, scheduled jobs
+
+	/proc/ - /proc/<PID>/
+		A window onto your running system
+		Looking at current processes of your computer
+
+	/etc/passwd
+		now changed to /etc/shadow
+	
+	/bin
+		Programs installed
+
+LINUX FILE SYSTEM
+	Ext3 - Ext4
+		Contains journals about current jobs
+
+	Allocation table
+		~inode table
+			Contains timestamps, user groups, modifcation time m.m
+
