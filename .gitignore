@@ -11,6 +11,9 @@
 *.cb
 *.cb2
 custom.pdf
+main.pdf
 *.gz
 *.fdb_latexmk
 *.DS_Store
+*.xml
+*.bcf
