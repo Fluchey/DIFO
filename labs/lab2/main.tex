@@ -1,0 +1,142 @@
+% DIFO LaTeX template
+% Created from scratch by Ulf Noring (ulfnor@dsv.su.se)
+% May be freely modified and distributed as long as credit is given in a comment in the main code file.
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% Can be used to shorten hyperlinks, \href{http://www.link.com}{This is my link}
+\usepackage[]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=[RGB]{6,69,173},
+    citecolor=black,
+}
+
+% Used to show code stretching multiple lines, use with \begin{lstlisting}
+%code
+%\end{lstlisting}
+\usepackage{listings}
+
+% appendix environment
+\usepackage{appendix}
+
+%Cool cursive font
+\usepackage{wesa}
+
+% header settings
+\usepackage{fancyhdr}
+\pagestyle{empty} % no header/footer
+\renewcommand{\headrulewidth}{0pt} %remove line separating page & header
+\setlength\headsep{10pt} %vertical distance between header & page
+
+\lhead{\textbf{CFIAR} [insert case number]} %left header
+
+\chead{} %center header
+\rhead{\includegraphics[width=0.2\textwidth]{cs2lab-logo.png}} %right header
+\lfoot{Cyber Systems Security Lab, DSV | SU} %left footer
+\cfoot{} %center footer
+\rfoot{\thepage} %right footer
+
+%fill pages
+\usepackage{fullpage}
+
+%bibliography settings
+\usepackage[style=authoryear,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\addbibresource{references.bib} %reference file
+
+%used for certain date commands such as \monthname and similar
+\usepackage{datetime}
+
+%simple multi-line tables
+\usepackage{tabularx}
+
+% has to be included to use [H] specifier for figures (to anchor them HERE)
+\usepackage{float}
+
+% set depth of numbering to provide numbers for \section, subsection, subsubsection, paragraph and subparagraph. Lower numbers remove numbering starting from the rightmost item in the above list, i.e. secnumdepth 4 will not number subparagraphs.
+\setcounter{secnumdepth}{5}
+
+%shorten space between table text and cell lines
+\setlength{\tabcolsep}{.16667em}
+
+% required for images
+\RequirePackage{graphicx}
+
+\graphicspath{{Images/}} % specifies where images are stored
+
+% modify \paragraph and \subparagraph so that they look like \subsubsection
+\usepackage{titlesec}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titleformat{\subparagraph}
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%uncomment the below command to change section numbers to A, B, C instead of 1, 2, 3.
+%\renewcommand{\thesection}{\Alph{section}}
+
+% longtables stretch across pages and the width of their cells can be defined manually. They also linebreak contents in cells. Very useful for large tables that would otherwise be too wide or long to fit in a single page.
+\usepackage{longtable}
+
+%fix second itemize to be circles
+\renewcommand{\labelitemii}{$\circ$}
+
+\title{DIFO VT17 Lab \#2}
+\author{Group \#21\, Member 2, Member 3}
+\date{\today} %calculated at compilation
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} %make sure no style on title page
+\pagestyle{empty} % no style for table of contents either
+\clearpage
+
+\tableofcontents
+\clearpage
+
+%start counting pages here
+\setcounter{page}{1}
+
+%start to include headers
+\pagestyle{fancy}
+
+% Sections
+
+\input{Sections/0_title}
+\input{Sections/1_case_description}
+\input{Sections/2_identification}
+\input{Sections/3_acquisition}
+\input{Sections/4_examination}
+\input{Sections/5_documentation}
+
+% Bibliography goes here
+\clearpage
+\printbibliography
+\clearpage
+
+\input{Sections/6_brief_report}
+
+% Appendices
+
+%empty header
+\lhead{}
+\rhead{}
+
+\begin{appendix}
+
+\input{Appendices/A}
+\clearpage
+\input{Appendices/B}
+\clearpage
+\end{appendix}
+
+\end{document}
+
