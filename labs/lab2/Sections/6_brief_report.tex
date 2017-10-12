@@ -34,18 +34,17 @@
 			of 512 bytes per sector resulting in a total size of 4096 bytes per cluster.
 			Allocated space was 36690026496 bytes (34,2GB) and Unallocated space
 			was 8449069056 (7,9GB)
-		\item The registry hives containing REGISTRY keys was copied from 
+			
+			\item The registry hives containing SOFTWARE keys was copied from 
 			\begin{itemize}
-			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
-			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
-			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
-			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
-			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
-			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
-			\textbackslash Users\textbackslash evgeny\textbackslash ntuser.dat \\
-			Beside 'ntuser.dat' two log files named 'ntuser.dat.LOG1' and 'ntuser.dat.LOG2' were found and copied
-	\end{itemize}
+			
+				\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
+				
+			\end{itemize}
 	
+		\item Withing the 'software' registry hive, the following information about the operating system was found: The version was Windows 7 professional. Date of installation was Wednesday the 15th pf July 2015, 10:35:41.
+		
+		
 		\end{itemize}
 	
 \end{itemize}
@@ -53,6 +52,84 @@
 
 \item \textbf{Summary of Findings:}\\
 Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB\textunderscore 2.raw
+
+	\item The registry hives containing REGISTRY keys was copied from 
+	\begin{itemize}
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
+		\item \textbackslash Users\textbackslash evgeny\textbackslash ntuser.dat \\
+		Beside 'ntuser.dat' two log files named 'ntuser.dat.LOG1' and 'ntuser.dat.LOG2' were found and copied
+		
+		\item Withing the 'software' registry hive, under 
+		Microsoft \textbackslash Windows \textbackslash CurrentVersion \textbackslash Run, the following information was found about programs that were configured to startup with the system.
+		
+		\begin{itemize}
+			\item "C:\textbackslash Program Files \textbackslash Eraser.exe - atRestart".\\ This is a program designed to remove files on startup.
+		\end{itemize}
+		
+		\item The system is most probably a physical system.
+		
+		
+		
+		
+	\end{itemize}
+
+\item \textbf{Case Specific Questions}
+
+	\begin{itemize}
+		
+		\item Looking through the folder \textbackslash Users\textbackslash  within Encase, we found user accounts 
+		
+		\begin{itemize}
+			\item 'Evgeny'
+			\item 'Public'
+			\item 'Default'
+		\end{itemize} 
+		
+		\item Looking through the registry hive SAM with Registry Viewer, under
+		\textbackslash SAM \textbackslash Domains \textbackslash Account \textbackslash Users \textbackslash Names \textbackslash
+		 we confirmed these user accounts.
+		
+		\begin{itemize}
+			\item 'Evgeny'
+			\item 'Guest'
+			\item 'Administrator'
+		\end{itemize}
+		
+		\item within the SAM registry hive, information was found about the login dates.\\ 
+		Under \textbackslash SAM \textbackslash Domains \textbackslash Account \textbackslash Users \textbackslash Names \textbackslash evgeny, it was confirmed that the Hexadecimal value for the user (RID value) was 03E8. under
+		\textbackslash SAM \textbackslash Domains \textbackslash Account \textbackslash Users \textbackslash 000003E8 \textbackslash the following was found:
+		
+		\begin{itemize}
+		\item User name: 'Evgeny'
+		\item Last logon time: 11/6/2015 13:48:51 UTC
+		\item Last password change time 7/15/2015 10:35:34 UTC.\\
+		If Evgeny hasn't changed his password, this corresponds to the account creation time.
+		\item Logon count: 33
+		\item User password hint: "NoSuchThingBaby"
+		\end{itemize}
+		
+		\item The installed programs that were found in:
+		\textbackslash Program Files \textbackslash \\
+		\textbackslash Program Files (x86) \\
+		were:
+		
+		\begin{itemize}
+			\item 
+			\item 
+			\item 
+		\end{itemize}
+		
+		\item email address found evgeny.luckyone@mail.ru
+		
+		\item hiberfil.sys and pagefile.sys were copied using Encase and searched through
+		
+	\end{itemize}
+
 \item \textbf{Items Analyzed}
 
 \begin{longtable}{p{0.4\textwidth}p{0.6\textwidth}}
