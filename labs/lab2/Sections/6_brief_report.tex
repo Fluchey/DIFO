@@ -1,30 +1,58 @@
 %Well done! Now that we have the internal document in place we need to make a brief report that the attorney and other non-technical colleagues can get read through swiftly. The brief report below, is an example of a forensics investigation report which contains the essentials of a forensics investigation. This brief version of the report contains all necessary information about the case and, needless to say, it maintains the chain of custody. The italic text is sample text from the source template. When writing your own report, italics should not be used for these sections below.
 
-\section{Case X Brief Report}
+\section{Case 1 Brief Report}
 
 %Provide the steps used to perform the investigation. This section will vary according to the type of investigation. Add sections as needed.
 
 \begin{longtable}{p{0.5\textwidth}p{0.5\textwidth}}
-\textbf{REPORT OF} &  \underline{\hspace{5cm}}\\
+\textbf{REPORT OF} & Requested Windows Forensic Investigation\\
 &\\
-\textbf{MEMORANDUM FOR} & \textit{County Sheriff's Police} \\
-& \textit{Investigator Johnson} \\
-& \textit{Anytown, USA 01234}\\
+\textbf{MEMORANDUM FOR} & \textit{The Super Secret Police} \\
+			& \textit{Investigators Fluch \& Bäckström} \\
+   & \textit{Super Secret police location (Cloud)}\\
 &\\
 \textbf{SUBJECT} & \textit{Forensic Media Analysis Report}\\
-& \textit{SUBJECT: DOE, JOHN }\\
-& Case Number: 012345\\
+& \textit{SUBJECT: Gachev, Evgeny}\\
+& Case Number: 1\\
 \end{longtable}
 
 \begin{enumerate}
-\item \textbf{Status: Closed}\\
-\item \textbf{Summary of Findings:}
-
-\begin{itemize}
-\item \textit{327 files containing images of what appeared to be children depicted in a sexually explicit manner were recovered.}
-\item \textit{34 shortcut files that pointed to files on floppy disks with sexually explicit file names involving children were recovered.}
+\item \textbf{Status: Pending}\\
+\item \textbf{System Related Questions}
+	\begin{itemize}
+	\item REQUESTER provided the following hash sums:
+		\begin{itemize}
+			\item e6dc38a4f42910729669990138f86265  evgeny\textunderscore 40GB\textunderscore2.raw
+			\item fc4fa4b0a97c5f080c48d103cb2dfa64734bb935 evgeny\textunderscore 40GB\textunderscore2.raw
+		\end{itemize}
+	\item Verfication of the file were confirmed on 2017.10.12 by matching the hash sums provided by REQUESTER.
+	\item \textbf{The following findings are all reported by Encase}
+		\begin{itemize}
+		\item The drive contained 88162304 Total sectors of 512 Bytes per sector 
+			and had a total size of 45139095552 Bytes
+		\item One partition was found with NTFS as file system with 8 sectors per cluster with a size
+			of 512 bytes per sector resulting in a total size of 4096 bytes per cluster.
+			Allocated space was 36690026496 bytes (34,2GB) and Unallocated space
+			was 8449069056 (7,9GB)
+		\item The registry hives containing REGISTRY keys was copied from 
+			\begin{itemize}
+			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
+			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
+			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
+			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
+			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
+			\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
+			\textbackslash Users\textbackslash evgeny\textbackslash ntuser.dat \\
+			Beside 'ntuser.dat' two log files named 'ntuser.dat.LOG1' and 'ntuser.dat.LOG2' were found and copied
+	\end{itemize}
+	
+		\end{itemize}
+	
 \end{itemize}
 
+
+\item \textbf{Summary of Findings:}\\
+Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB\textunderscore 2.raw
 \item \textbf{Items Analyzed}
 
 \begin{longtable}{p{0.4\textwidth}p{0.6\textwidth}}
@@ -33,39 +61,6 @@
 \end{longtable}
 
 \item \textbf{Details of Findings}
-
-\begin{itemize}
-
-\item \textit{Findings in this paragraph related to the Generic Hard Drive, Model ABCDE, Serial \# 3456ABCD, recovered from Tag Number 012345, One Generic laptop, Serial \# 123456789.}
-\end{itemize}
-
-\begin{enumerate}
-\item \textit{The examined hard drive was found to contain a Microsoft® Windows® 98 operating system.} 
-
-\item \textit{The directory and file listing for the media was saved to the Microsoft® Access Database TAG012345.MDB.}
-
-\item \textit{The directory C:$\backslash$JOHN DOE$\backslash$PERSONAL$\backslash$FAV PICS$\backslash$, was found to contain 327 files containing images of what appeared to be children depicted in a sexually explicit manner. The file directory for 327 files disclosed that the files’ creation date and times are 5 July 2001 between 11:33 p.m. and 11:45 p.m., and the last access date for 326 files listed is 27 December 2001. In addition, the file directory information for one file disclosed the last access date as 6 January 2002.}
-
-\item \textit{The directory C:$\backslash$JOHN DOE$\backslash$PERSONAL$\backslash$FAV PICS TO DISK$\backslash$ contained 34 shortcut files that pointed to files on floppy disks with sexually explicit file names involving children. The file directory information for the 34 shortcut files disclosed the files’ creation date and times are 5 July 2001 between 11:23 p.m. and 11:57 p.m., and the last access date for the 34 shortcut files was listed as 5 July 2001.}
-
-\item \textit{The directory C:$\backslash$JOHN DOE$\backslash$LEGAL$\backslash$ contained five Microsoft® Word documents related to various contract relationships John Doe Roofing had with other entities.} 
-
-\item \textit{The directory C:$\backslash$JOHN DOE$\backslash$JOHN DOE ROOFING$\backslash$ contained files related to operation of John Doe Roofing.}
-
-\item \textit{No further user-created files were present on the media.}
-\end{enumerate}
-
-\item \textbf{Glossary}\\
-
-\begin{longtable}{p{0.27\textwidth}p{0.6\textwidth}}
-\textbf{Term} & \textbf{Explanation}\\
-&\\
-\textit{Shortcut File} & \textit{A file created that links to another file.} \\
-&\\
-\textit{Metadata} & \textit{Data associated with a file, such as timestamps.} \\
-\end{longtable}
-
-\item \textit{Items Provided: In addition to this hard copy report, one compact disk (CD) was submitted with an electronic copy of this report. The report on CD contains hyperlinks to the above-mentioned files and directories.}
 
 \end{enumerate}
 
