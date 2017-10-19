@@ -119,7 +119,7 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 		
 		\begin{itemize}
 			\item FBCIM (Facebook chat IM) 
-			\item GNU (GNU Privacy Guard) 
+			\item GNU-PG (GNU Privacy Guard) 
 			\item Mozilla Firefox
 			\item Mozilla Thunderbird
 		\end{itemize}
@@ -134,19 +134,193 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 			\item FileZilla FTP Client
 			\item TrueCrypt
 			\item VeraCrypt
+			
+			\item In SUSPECTS downloads folder (C:\textbackslash Users \textbackslash evgeny \textbackslash Downloads \textbackslash) a program called "hidden tear" was found. The program is used to encrypt files in a manner that can be described as ransomware.
+			
 		\end{itemize}
 
 
 	\item An email client (Thunderbird) was found on SUSPECTS computer: 
 		\begin{itemize}
-			\item email address found evgeny.luckyone@mail.ru
-			\item Looking through the emails sent and received 
-
+			\item email addresses found under "TO":
+				\begin{itemize}
+					\item evgeny.luckyone@mail.ru
+				\end{itemize}
+			\item email addresses found under "FROM":
+				\begin{itemize}
+					\item security@facebook.com
+					\item welcome@corp.mail.ru
+					\item mailapps@corp.mail.ru
+					\item notification+zrdzvgcipoif@facebookmail.com
+					\item info@luxurytravelmedia.com
+					\item agent@corp.mail.ru
+					\item MAILER-DAEMON@fallback7.mail.ru
+					\item no-reply@ghostmail.com
+					\item mailer-daemon@corp.mail.ru
+					\item goranborisov@mailbox.org
+					\item do-not-reply@keyserver2.pgp.com
+					
+					\item chingiz112@ghostmail.com
+					\item kykypykv@ghostmail.org
+				\end{itemize}
+			
+			\item Looking through the emails sent and received some interesting mails were found: 
+			
+			\begin{itemize}
+				\item from: goranborisov@mailbox.org. The mail had an attached file named "encrypted.asc" of the size 4086 kB. The subject of the mail was "re:qwerty". 
+				
+				\item a lot of correspondence to and from Facebook, with the correspondence ending with a mail stating that:
+				
+				"You have requested a copy of your Facebook data"
+				
+				And after that:
+				
+				"Your Facebook download is ready"
+				
+			\end{itemize}
+			
+		\item Anynomization tools found were:
+			
+				\begin{itemize}
+					\item Tor Browser
+					
+					\begin{itemize}
+						\item under C:\textbackslash Users \textbackslash evgeny \textbackslash Desktop \textbackslash links.txt - these links were found:
+						\begin{lstlisting}
+						
+						main
+						http://kpvz7kpmcmne52qf.onion/wiki/index.php/Main_Page
+						
+						Cash
+						http://usjudr3c6ez6tesi.onion/
+						http://sla2tcypjz774dno.onion/
+						http://y3fpieiezy2sin4a.onion/
+						http://qkj4drtgvpm7eecl.onion/
+						http://usd4cx7otgnx6wtp.onion/
+						http://o6klk2vxlpunyqt6.onion/
+						http://z2hjm7uhwisw5jm5.onion/
+						http://mexik73wtbc74axi.onion/
+						http://yutuuuhvlfyagiqj.onion/
+						http://lg4v2krmp3f3afbf.onion/
+						http://7zjlxleoekywde3j.onion/index.html
+						http://counyya4y4lalydi.onion/
+						http://countermltd42g4x.onion/
+						http://replicaf6cjadwxs.onion/
+						http://countuwelx4r7qi5.onion/
+						http://countrfoioed4ckx.onion/
+						
+						banks
+						http://laundrymy244rcwn.onion/
+						
+						id
+						http://vfqnd6mieccpyiit.onion/
+						http://fakeidscpc4zz6c4.onion/
+						http://cityzenp4d2eytjh.onion/
+						http://fakeidscpc4zz6c4.onion/
+						http://ukpasspprmwaqrsd.onion/
+						
+						i2
+						http://psi.i2p/wiki/
+						
+						hosting
+						http://hostie65cxwr4tza.onion/
+						http://thhazdmx2kymozql.onion/
+						http://torvps7kzis5ujfz.onion/
+						
+						\end{lstlisting}
+						
+					\end{itemize}
+					
+					\item Eraser
+					
+					\item Gnu Privacy Guard (GNU-PG)
+					\item TrueCrypt
+					\item VeraCrypt
+					\item Kali linux distribution
+					\item Tails linux distribution
+					
+				\end{itemize}
+				
 		
-		\item hiberfil.sys and pagefile.sys were copied using Encase and searched through
+		\item under the registry key \textbackslash system \textbackslash ControlSet001 \textbackslash Services \textbackslash Tcpip \textbackslash Parameters \textbackslash the following information was found:
+			\begin{itemize}
+				\item \textit{Name:} ICSDomain  \textit{data: mshome.net}
+				\item \textit{Name:} Hostname  \textit{data: evgeny-laptop}
+	
+			\end{itemize}
+			
+			\item under registry key \textbackslash Interfaces \textbackslash \textbraceleft AB3E992B-CC1C-464D-A1D6-9EB82846715C \textbraceright
+			
+			\begin{itemize}
+				\item \textit{Name:} DhcpIPAddress  \textit{data: 172.17.1.183}
+				\item \textit{Name:} DhcpNameServer  \textit{cs2lab.dsv.su.se}
+			\end{itemize}
+			
+		\item Indication of attempted access to ftp was found with the local installation of FileZilla.
+			
+			\begin{itemize}
+				\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Roaming \textbackslash FileZilla \textbackslash recenttservers.xml \\
+				recent connections in the above file was:
+				\item \textit{IP-Address:} 72.22.81.47:22 \textit{Username:} lucky456 \textit{Password hash:} bHVja3k0NTY=
+				\item \textit{IP-Address:} 31.220.43.103:999 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj
+				\item \textit{IP-Address:} 31.220.43.103:22 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj\\
+				
+				\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Local \textbackslash Temp \textbackslash gpg-hwyPbw \textbackslash tempin.txt - the following file was found concerning a connection to the GnuPG key server\\
+				
+				\begin{lstlisting}
+				# This is a GnuPG 2.0.28 keyserver communications file
+				VERSION 1
+				PROGRAM 2.0.28
+				SCHEME hkp
+				HOST keyserver2.pgp.com
+				PORT 11371
+				PATH /
+				COMMAND GET
+				
+				0x424A6212
+				
+				\end{lstlisting}
+				
+			\end{itemize}	
+			
+			
+		\item The investigation has so far found a lot of information within the windows registry, as stated above. The registry hives searched through has been:
+		
+		\item 
+		\begin{itemize}
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
+		\end{itemize} 
+		
+		\item Withing the software registry hive, information can be found about installed and uninstalled programs. Within \textbackslash Software \textbackslash Microsoft \textbackslash Windows \textbackslash CurrentVersion \ Installer \textbackslash Folders - the following entries was found to be interesting.
+		
+		\begin{itemize} 
+			\item Name: C:\textbackslash Program Files \textbackslash Oracle \textbackslash VirtualBox \textbackslash
+			\item Name: C:\textbackslash Program Files \textbackslash Eraser \textbackslash
+			\item Name: C:\textbackslash Program Files (x86) \textbackslash Java \textbackslash\\
+		\end{itemize}
+		
+		\item  Within \textbackslash Software \textbackslash Microsoft \textbackslash Windows \textbackslash CurrentVersion \ Uninstall - the following entries was found to be interesting.
+		
+			\begin{itemize}
+				\item \textbraceleft 66AB13EA-E7D2-4CFC-9B66-8E9EE44C89EE \textbraceright \\
+				Name: Comments: Data: Secure Data Removal For Windows \\
+				Name: DisplayName Data: Eraser 6.2.0.2969 \\
+				Name: InstallDate Data: 2015-08-17 \\
+				
+				\item \textbraceleft FCD0B365-2189-45F3-9AF2-2BCED86C121A \textbraceright \\
+				Name: DisplayName Data: Oracle VM VirtualBox 5.0.0 \\
+				Name: InstallDate Data: 2015-07-24 \\
+			\end{itemize}
+		
+		
+		\end{itemize}
 		
 	\end{itemize}
-
 \item \textbf{Items Analyzed}
 
 \begin{longtable}{p{0.4\textwidth}p{0.6\textwidth}}
