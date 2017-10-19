@@ -68,7 +68,8 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 		Microsoft \textbackslash Windows \textbackslash CurrentVersion \textbackslash Run, the following information was found about programs that were configured to startup with the system.
 		
 		\begin{itemize}
-			\item "C:\textbackslash Program Files \textbackslash Eraser.exe - atRestart".\\ This is a program designed to remove files on startup.
+			\item "C:\textbackslash Program Files\textbackslash Eraser.exe - atRestart".\\ 
+				This is a program designed to remove files on startup.
 		\end{itemize}
 		
 		\item The system is most probably a physical system.
@@ -82,7 +83,7 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 
 	\begin{itemize}
 		
-		\item Looking through the folder \textbackslash Users\textbackslash  within Encase, we found user accounts 
+		\item Looking through the folder\textbackslash Users\textbackslash within Encase, we found user accounts 
 		
 		\begin{itemize}
 			\item 'Evgeny'
@@ -91,7 +92,7 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 		\end{itemize} 
 		
 		\item Looking through the registry hive SAM with Registry Viewer, under
-		\textbackslash SAM \textbackslash Domains \textbackslash Account \textbackslash Users \textbackslash Names \textbackslash
+		\textbackslash SAM\textbackslash Domains\textbackslash Account\textbackslash Users\textbackslash Names\textbackslash
 		 we confirmed these user accounts.
 		
 		\begin{itemize}
@@ -101,8 +102,8 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 		\end{itemize}
 		
 		\item within the SAM registry hive, information was found about the login dates.\\ 
-		Under \textbackslash SAM \textbackslash Domains \textbackslash Account \textbackslash Users \textbackslash Names \textbackslash evgeny, it was confirmed that the Hexadecimal value for the user (RID value) was 03E8. under
-		\textbackslash SAM \textbackslash Domains \textbackslash Account \textbackslash Users \textbackslash 000003E8 \textbackslash the following was found:
+		Under\textbackslash SAM\textbackslash Domains\textbackslash Account\textbackslash Users\textbackslash Names\textbackslash evgeny, it was confirmed that the Hexadecimal value for the user (RID value) was 03E8. 
+		Under\textbackslash SAM\textbackslash Domains\textbackslash Account\textbackslash Users\textbackslash 000003E8\textbackslash the following was found:
 		
 		\begin{itemize}
 		\item User name: 'Evgeny'
@@ -113,18 +114,34 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 		\item User password hint: "NoSuchThingBaby"
 		\end{itemize}
 		
-		\item The installed programs that were found in:
-		\textbackslash Program Files \textbackslash \\
-		\textbackslash Program Files (x86) \\
-		were:
+		\item The installed programs that does not come with windows pre-installed that were found in:
+		\textbackslash Program Files\textbackslash Program Files (x86) were:
 		
 		\begin{itemize}
-			\item 
-			\item 
-			\item 
+			\item FBCIM (Facebook chat IM) 
+			\item GNU (GNU Privacy Guard) 
+			\item Mozilla Firefox
+			\item Mozilla Thunderbird
 		\end{itemize}
 		
-		\item email address found evgeny.luckyone@mail.ru
+		\item The installed programs that does not come with windows pre-installed that were found in:
+		\textbackslash Program Files\textbackslash Program Files were:
+
+		\begin{itemize}
+			\item 7-Zip
+			\item DVD Maker
+			\item Eraser
+			\item FileZilla FTP Client
+			\item TrueCrypt
+			\item VeraCrypt
+		\end{itemize}
+
+
+	\item An email client (Thunderbird) was found on SUSPECTS computer: 
+		\begin{itemize}
+			\item email address found evgeny.luckyone@mail.ru
+			\item Looking through the emails sent and received 
+
 		
 		\item hiberfil.sys and pagefile.sys were copied using Encase and searched through
 		
