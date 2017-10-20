@@ -9,7 +9,7 @@
 &\\
 \textbf{MEMORANDUM FOR} & \textit{The Super Secret Police} \\
 			& \textit{Investigators Fluch \& Bäckström} \\
-   & \textit{Super Secret police location (Cloud)}\\
+   & \textit{Super Secret police location}\\
 &\\
 \textbf{SUBJECT} & \textit{Forensic Media Analysis Report}\\
 & \textit{SUBJECT: Gachev, Evgeny}\\
@@ -17,72 +17,77 @@
 \end{longtable}
 
 \begin{enumerate}
-\item \textbf{Status: Pending}\\
-\item \textbf{System Related Questions}
-	\begin{itemize}
-	\item REQUESTER provided the following hash sums:
-		\begin{itemize}
-			\item e6dc38a4f42910729669990138f86265  evgeny\textunderscore 40GB\textunderscore2.raw
-			\item fc4fa4b0a97c5f080c48d103cb2dfa64734bb935 evgeny\textunderscore 40GB\textunderscore2.raw
-		\end{itemize}
-	\item Verfication of the file were confirmed on 2017.10.12 by matching the hash sums provided by REQUESTER.
-	\item \textbf{The following findings are all reported by Encase}
-		\begin{itemize}
-		\item The drive contained 88162304 Total sectors of 512 Bytes per sector 
-			and had a total size of 45139095552 Bytes
-		\item One partition was found with NTFS as file system with 8 sectors per cluster with a size
-			of 512 bytes per sector resulting in a total size of 4096 bytes per cluster.
-			Allocated space was 36690026496 bytes (34,2GB) and Unallocated space
-			was 8449069056 (7,9GB)
-			
-			\item The registry hives containing SOFTWARE keys was copied from 
-			\begin{itemize}
-			
-				\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
-				
-			\end{itemize}
-	
-		\item Withing the 'software' registry hive, the following information about the operating system was found: The version was Windows 7 professional. Date of installation was Wednesday the 15th pf July 2015, 10:35:41.
-		
-		
-		\end{itemize}
-	
-\end{itemize}
-
+\item \textbf{Status: Closed}\\
 
 \item \textbf{Summary of Findings:}\\
-Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB\textunderscore 2.raw
 
-	\item The registry hives containing REGISTRY keys was copied from 
+GLÖM INTE FYLLA I SAMMANFATTNING AV VAD VI HITTAT	
+	
+\item \textbf{Items Analyzed}
+\begin{longtable}{p{0.4\textwidth}p{0.6\textwidth}}
+\textbf{\underline{TAG NUMBER}} & \textbf{\underline{ITEM DESCRIPTION}} \\
+012345 & evgeny\textunderscore 40GB\textunderscore 2.raw
+\end{longtable}
+
+\item \textbf{Details of Findings}
+
+\newcommand*{\MyIndent}{\hspace*{0.5cm}}%
+\begin{tabular}{|l|}
+	\hline
+	\textbf{Summary of evidence file: (Found and verified in Encase)} \\ \hline
+	\textbf{Image file name:} evgeny\textunderscore 40GB\textunderscore 2.raw \\
+	\textbf{Image Name:} evgeny-laptop \\
+	\textbf{Image file MD5:} e6dc38a4f42910729669990138f86265 \\
+	\textbf{Image file sha1:} fc4fa4b0a97c5f080c48d103cb2dfa64734bb935 \\
+	\textbf{No. hard disk partitions:} 1 \\
+	\textbf{Partition information:} \\
+	\MyIndent NTFS \\
+	\MyIndent 8 sectors per cluster \\
+	\MyIndent 512 bytes per sector = 4096 bytes per cluster \\
+	\MyIndent Allocated space = 36690026496 bytes (34,2GB) \\
+	\MyIndent Unallocated space = 8449069056 (7,9GB) \\
+	\hline
+	
+	\textbf{Number of sectors on hard disk:} 88162304 \\
+	\textbf{Sector size on hard disk:} 512 bytes \\
+	\textbf{Disk size:} 45139095552 bytes (42GB) \\
+	\hline
+\end{tabular}
+
+\begin{itemize}
+	\newpage
+	\item \textbf{System details}
 	\begin{itemize}
-		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
-		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
-		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
-		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
-		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
-		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
-		\item \textbackslash Users\textbackslash evgeny\textbackslash ntuser.dat \\
-		Beside 'ntuser.dat' two log files named 'ntuser.dat.LOG1' and 'ntuser.dat.LOG2' were found and copied
-		
-		\item Withing the 'software' registry hive, under 
-		Microsoft \textbackslash Windows \textbackslash CurrentVersion \textbackslash Run, the following information was found about programs that were configured to startup with the system.
-		
+		\item The {\footnotesize '\textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software'} key contained information about the installed operating system which was
+		\textbf{Windows 7 professional} with an install date of \textbf{Wednesday the 15th of July 2015, 10:35:41}
+
+		\item The registry hives containing REGISTRY keys was copied from 
 		\begin{itemize}
-			\item "C:\textbackslash Program Files\textbackslash Eraser.exe - atRestart".\\ 
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
+			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
+			\item \textbackslash Users\textbackslash evgeny\textbackslash ntuser.dat \\
+			Beside 'ntuser.dat' two log files named 'ntuser.dat.LOG1' and 'ntuser.dat.LOG2' were found and copied
+			
+			\item Withing the 'software' registry hive, under 
+			Microsoft \textbackslash Windows \textbackslash CurrentVersion \textbackslash Run, the following information was found about programs that were configured to startup with the system.
+			
+			\begin{itemize}
+				\item "C:\textbackslash Program Files\textbackslash Eraser.exe - atRestart".\\ 
 				This is a program designed to remove files on startup.
+			\end{itemize}
+			
+			\item The system is most probably a physical system.
+			
 		\end{itemize}
-		
-		\item The system is most probably a physical system.
-		
-		
-		
-		
 	\end{itemize}
-
-\item \textbf{Case Specific Questions}
-
+	
+	\newpage
+	\item \textbf{User accounts}
 	\begin{itemize}
-		
 		\item Looking through the folder\textbackslash Users\textbackslash within Encase, we found user accounts 
 		
 		\begin{itemize}
@@ -93,7 +98,7 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 		
 		\item Looking through the registry hive SAM with Registry Viewer, under
 		\textbackslash SAM\textbackslash Domains\textbackslash Account\textbackslash Users\textbackslash Names\textbackslash
-		 we confirmed these user accounts.
+		we confirmed these user accounts.
 		
 		\begin{itemize}
 			\item 'Evgeny'
@@ -106,63 +111,69 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 		Under\textbackslash SAM\textbackslash Domains\textbackslash Account\textbackslash Users\textbackslash 000003E8\textbackslash the following was found:
 		
 		\begin{itemize}
-		\item User name: 'Evgeny'
-		\item Last logon time: 11/6/2015 13:48:51 UTC
-		\item Last password change time 7/15/2015 10:35:34 UTC.\\
-		If Evgeny hasn't changed his password, this corresponds to the account creation time.
-		\item Logon count: 33
-		\item User password hint: "NoSuchThingBaby"
+			\item User name: 'Evgeny'
+			\item Last logon time: 11/6/2015 13:48:51 UTC
+			\item Last password change time 7/15/2015 10:35:34 UTC.\\
+			If Evgeny hasn't changed his password, this corresponds to the account creation time.
+			\item Logon count: 33
+			\item User password hint: "NoSuchThingBaby"
 		\end{itemize}
-		
-		\item The installed programs that does not come with windows pre-installed that were found in:
-		\textbackslash Program Files\textbackslash Program Files (x86) were:
-		
-		\begin{itemize}
-			\item FBCIM (Facebook chat IM) 
-			\item GNU-PG (GNU Privacy Guard) 
-			\item Mozilla Firefox
-			\item Mozilla Thunderbird
-		\end{itemize}
-		
-		\item The installed programs that does not come with windows pre-installed that were found in:
-		\textbackslash Program Files\textbackslash Program Files were:
-
-		\begin{itemize}
-			\item 7-Zip
-			\item DVD Maker
-			\item Eraser
-			\item FileZilla FTP Client
-			\item TrueCrypt
-			\item VeraCrypt
-			
-			\item In SUSPECTS downloads folder (C:\textbackslash Users \textbackslash evgeny \textbackslash Downloads \textbackslash) a program called "hidden tear" was found. The program is used to encrypt files in a manner that can be described as ransomware.
-			
-		\end{itemize}
-
-
-	\item An email client (Thunderbird) was found on SUSPECTS computer: 
+\end{itemize}
+	
+	\item The installed programs that does not come with windows pre-installed that were found in:
+	\textbackslash Program Files\textbackslash Program Files (x86) were:
+	
+	\begin{itemize}
+		\item FBCIM (Facebook chat IM) 
+		\item GNU-PG (GNU Privacy Guard) 
+		\item Mozilla Firefox
+		\item Mozilla Thunderbird
+	\end{itemize}
+	
+	\newpage
+	\item \textbf{Programs found}
+	
+	\begin{tabular}{|r|l|}
+		\hline
+		\textbf{7-zip} & Compression program \\
+		\textbf{DVD Maker} & Used for creating DVD:s \\
+		\textbf{Eraser} & Used for deletion of files \\
+		\textbf{Filezilla FTP Client} & A file transfer program \\
+		\textbf{Gnu Privacy Guard (GNU-PG)} & Used for encrypting data \\
+		\textbf{Hidden Tear} & A program used for creating ransomware \\
+		\textbf{Thunderbird} & Email client \\
+		\textbf{Tor Browser} & An internet browser used for anonymization \\
+		\textbf{Truecrypt} & Used for encrypting data \\
+		\textbf{Veracrypt} & Used for encrypting data \\
+		\hline
+	\end{tabular}
+	
+	\newpage
+	\item \textbf{Program data found}
+	\begin{itemize}
+		\item Thunderbird (Email client): 
 		\begin{itemize}
 			\item email addresses found under "TO":
-				\begin{itemize}
-					\item evgeny.luckyone@mail.ru
-				\end{itemize}
+			\begin{itemize}
+				\item evgeny.luckyone@mail.ru
+			\end{itemize}
 			\item email addresses found under "FROM":
-				\begin{itemize}
-					\item security@facebook.com
-					\item welcome@corp.mail.ru
-					\item mailapps@corp.mail.ru
-					\item notification+zrdzvgcipoif@facebookmail.com
-					\item info@luxurytravelmedia.com
-					\item agent@corp.mail.ru
-					\item MAILER-DAEMON@fallback7.mail.ru
-					\item no-reply@ghostmail.com
-					\item mailer-daemon@corp.mail.ru
-					\item goranborisov@mailbox.org
-					\item do-not-reply@keyserver2.pgp.com
-					
-					\item chingiz112@ghostmail.com
-					\item kykypykv@ghostmail.org
-				\end{itemize}
+			\begin{itemize}
+				\item security@facebook.com
+				\item welcome@corp.mail.ru
+				\item mailapps@corp.mail.ru
+				\item notification+zrdzvgcipoif@facebookmail.com
+				\item info@luxurytravelmedia.com
+				\item agent@corp.mail.ru
+				\item MAILER-DAEMON@fallback7.mail.ru
+				\item no-reply@ghostmail.com
+				\item mailer-daemon@corp.mail.ru
+				\item goranborisov@mailbox.org
+				\item do-not-reply@keyserver2.pgp.com
+				
+				\item chingiz112@ghostmail.com
+				\item kykypykv@ghostmail.org
+			\end{itemize}
 			
 			\item Looking through the emails sent and received some interesting mails were found: 
 			
@@ -178,159 +189,99 @@ Findings in this paragraph are related to Image File: evgeny\textunderscore 40GB
 				"Your Facebook download is ready"
 				
 			\end{itemize}
-			
-		\item Anynomization tools found were:
-			
-				\begin{itemize}
-					\item Tor Browser
-					
-					\begin{itemize}
-						\item under C:\textbackslash Users \textbackslash evgeny \textbackslash Desktop \textbackslash links.txt - these links were found:
-						\begin{lstlisting}
-						
-						main
-						http://kpvz7kpmcmne52qf.onion/wiki/index.php/Main_Page
-						
-						Cash
-						http://usjudr3c6ez6tesi.onion/
-						http://sla2tcypjz774dno.onion/
-						http://y3fpieiezy2sin4a.onion/
-						http://qkj4drtgvpm7eecl.onion/
-						http://usd4cx7otgnx6wtp.onion/
-						http://o6klk2vxlpunyqt6.onion/
-						http://z2hjm7uhwisw5jm5.onion/
-						http://mexik73wtbc74axi.onion/
-						http://yutuuuhvlfyagiqj.onion/
-						http://lg4v2krmp3f3afbf.onion/
-						http://7zjlxleoekywde3j.onion/index.html
-						http://counyya4y4lalydi.onion/
-						http://countermltd42g4x.onion/
-						http://replicaf6cjadwxs.onion/
-						http://countuwelx4r7qi5.onion/
-						http://countrfoioed4ckx.onion/
-						
-						banks
-						http://laundrymy244rcwn.onion/
-						
-						id
-						http://vfqnd6mieccpyiit.onion/
-						http://fakeidscpc4zz6c4.onion/
-						http://cityzenp4d2eytjh.onion/
-						http://fakeidscpc4zz6c4.onion/
-						http://ukpasspprmwaqrsd.onion/
-						
-						i2
-						http://psi.i2p/wiki/
-						
-						hosting
-						http://hostie65cxwr4tza.onion/
-						http://thhazdmx2kymozql.onion/
-						http://torvps7kzis5ujfz.onion/
-						
-						\end{lstlisting}
-						
-					\end{itemize}
-					
-					\item Eraser
-					
-					\item Gnu Privacy Guard (GNU-PG)
-					\item TrueCrypt
-					\item VeraCrypt
-					\item Kali linux distribution
-					\item Tails linux distribution
-					
-				\end{itemize}
-				
-		
-		\item under the registry key \textbackslash system \textbackslash ControlSet001 \textbackslash Services \textbackslash Tcpip \textbackslash Parameters \textbackslash the following information was found:
-			\begin{itemize}
-				\item \textit{Name:} ICSDomain  \textit{data: mshome.net}
-				\item \textit{Name:} Hostname  \textit{data: evgeny-laptop}
+		\end{itemize}
+	\end{itemize}
 	
-			\end{itemize}
-			
-			\item under registry key \textbackslash Interfaces \textbackslash \textbraceleft AB3E992B-CC1C-464D-A1D6-9EB82846715C \textbraceright
-			
-			\begin{itemize}
-				\item \textit{Name:} DhcpIPAddress  \textit{data: 172.17.1.183}
-				\item \textit{Name:} DhcpNameServer  \textit{cs2lab.dsv.su.se}
-			\end{itemize}
-			
-		\item Indication of attempted access to ftp was found with the local installation of FileZilla.
-			
-			\begin{itemize}
-				\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Roaming \textbackslash FileZilla \textbackslash recenttservers.xml \\
-				recent connections in the above file was:
-				\item \textit{IP-Address:} 72.22.81.47:22 \textit{Username:} lucky456 \textit{Password hash:} bHVja3k0NTY=
-				\item \textit{IP-Address:} 31.220.43.103:999 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj
-				\item \textit{IP-Address:} 31.220.43.103:22 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj\\
-				
-				\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Local \textbackslash Temp \textbackslash gpg-hwyPbw \textbackslash tempin.txt - the following file was found concerning a connection to the GnuPG key server\\
-				
-				\begin{lstlisting}
-				# This is a GnuPG 2.0.28 keyserver communications file
-				VERSION 1
-				PROGRAM 2.0.28
-				SCHEME hkp
-				HOST keyserver2.pgp.com
-				PORT 11371
-				PATH /
-				COMMAND GET
-				
-				0x424A6212
-				
-				\end{lstlisting}
-				
-			\end{itemize}	
-			
-			
-		\item The investigation has so far found a lot of information within the windows registry, as stated above. The registry hives searched through has been:
-		
-		\item 
-		\begin{itemize}
-			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
-			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
-			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
-			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
-			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
-			\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
-		\end{itemize} 
-		
-		\item Withing the software registry hive, information can be found about installed and uninstalled programs. Within \textbackslash Software \textbackslash Microsoft \textbackslash Windows \textbackslash CurrentVersion \ Installer \textbackslash Folders - the following entries was found to be interesting.
-		
-		\begin{itemize} 
-			\item Name: C:\textbackslash Program Files \textbackslash Oracle \textbackslash VirtualBox \textbackslash
-			\item Name: C:\textbackslash Program Files \textbackslash Eraser \textbackslash
-			\item Name: C:\textbackslash Program Files (x86) \textbackslash Java \textbackslash\\
-		\end{itemize}
-		
-		\item  Within \textbackslash Software \textbackslash Microsoft \textbackslash Windows \textbackslash CurrentVersion \ Uninstall - the following entries was found to be interesting.
-		
-			\begin{itemize}
-				\item \textbraceleft 66AB13EA-E7D2-4CFC-9B66-8E9EE44C89EE \textbraceright \\
-				Name: Comments: Data: Secure Data Removal For Windows \\
-				Name: DisplayName Data: Eraser 6.2.0.2969 \\
-				Name: InstallDate Data: 2015-08-17 \\
-				
-				\item \textbraceleft FCD0B365-2189-45F3-9AF2-2BCED86C121A \textbraceright \\
-				Name: DisplayName Data: Oracle VM VirtualBox 5.0.0 \\
-				Name: InstallDate Data: 2015-07-24 \\
-				
-				
-			\end{itemize}
-		
-		
-		\end{itemize}
+	
+	\newpage
+	\item Virtual operating systems found
+	
+	\begin{tabular}{|r|l|}
+		\hline
+		\textbf{Kali Linux} & Debian-derived Linux distribution designed for digital forensics and penetration testing \\
+		\textbf{Tails Linux} & Security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity \\
+		\hline
+	\end{tabular}	
+	
+	\item under the registry key \textbackslash system \textbackslash ControlSet001 \textbackslash Services \textbackslash Tcpip \textbackslash Parameters \textbackslash the following information was found:
+	\begin{itemize}
+		\item \textit{Name:} ICSDomain  \textit{data: mshome.net}
+		\item \textit{Name:} Hostname  \textit{data: evgeny-laptop}
 		
 	\end{itemize}
-\item \textbf{Items Analyzed}
-
-\begin{longtable}{p{0.4\textwidth}p{0.6\textwidth}}
-\textbf{\underline{TAG NUMBER}} & \textbf{\underline{ITEM DESCRIPTION}} \\
-012345 & One Generic laptop, Serial \#12345677
-\end{longtable}
-
-\item \textbf{Details of Findings}
+	
+	\item under registry key \textbackslash Interfaces \textbackslash \textbraceleft AB3E992B-CC1C-464D-A1D6-9EB82846715C \textbraceright
+	
+	\begin{itemize}
+		\item \textit{Name:} DhcpIPAddress  \textit{data: 172.17.1.183}
+		\item \textit{Name:} DhcpNameServer  \textit{cs2lab.dsv.su.se}
+	\end{itemize}
+	
+	\item Indication of attempted access to ftp was found with the local installation of FileZilla.
+	
+	\begin{itemize}
+		\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Roaming \textbackslash FileZilla \textbackslash recenttservers.xml \\
+		recent connections in the above file was:
+		\item \textit{IP-Address:} 72.22.81.47:22 \textit{Username:} lucky456 \textit{Password hash:} bHVja3k0NTY=
+		\item \textit{IP-Address:} 31.220.43.103:999 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj
+		\item \textit{IP-Address:} 31.220.43.103:22 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj\\
+		
+		\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Local \textbackslash Temp \textbackslash gpg-hwyPbw \textbackslash tempin.txt - the following file was found concerning a connection to the GnuPG key server\\
+		
+		\begin{lstlisting}
+		# This is a GnuPG 2.0.28 keyserver communications file
+		VERSION 1
+		PROGRAM 2.0.28
+		SCHEME hkp
+		HOST keyserver2.pgp.com
+		PORT 11371
+		PATH /
+		COMMAND GET
+		
+		0x424A6212
+		
+		\end{lstlisting}
+		
+	\end{itemize}	
+	
+	
+	\item The investigation has so far found a lot of information within the windows registry, as stated above. The registry hives searched through has been:
+	
+	\item 
+	\begin{itemize}
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system\\ 
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash software\\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash security\\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash sam \\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash default \\
+		\item \textbackslash Windows\textbackslash System32\textbackslash config\textbackslash system \\
+	\end{itemize} 
+	
+	\item Withing the software registry hive, information can be found about installed and uninstalled programs. Within \textbackslash Software \textbackslash Microsoft \textbackslash Windows \textbackslash CurrentVersion \ Installer \textbackslash Folders - the following entries was found to be interesting.
+	
+	\begin{itemize} 
+		\item Name: C:\textbackslash Program Files \textbackslash Oracle \textbackslash VirtualBox \textbackslash
+		\item Name: C:\textbackslash Program Files \textbackslash Eraser \textbackslash
+		\item Name: C:\textbackslash Program Files (x86) \textbackslash Java \textbackslash\\
+	\end{itemize}
+	
+	\item  Within \textbackslash Software \textbackslash Microsoft \textbackslash Windows \textbackslash CurrentVersion \ Uninstall - the following entries was found to be interesting.
+	
+	\begin{itemize}
+		\item \textbraceleft 66AB13EA-E7D2-4CFC-9B66-8E9EE44C89EE \textbraceright \\
+		Name: Comments: Data: Secure Data Removal For Windows \\
+		Name: DisplayName Data: Eraser 6.2.0.2969 \\
+		Name: InstallDate Data: 2015-08-17 \\
+		
+		\item \textbraceleft FCD0B365-2189-45F3-9AF2-2BCED86C121A \textbraceright \\
+		Name: DisplayName Data: Oracle VM VirtualBox 5.0.0 \\
+		Name: InstallDate Data: 2015-07-24 \\
+		
+		
+	\end{itemize}
+	
+	
+\end{itemize}
 
 \end{enumerate}
 
