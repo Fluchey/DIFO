@@ -34,7 +34,7 @@ GLÖM INTE FYLLA I SAMMANFATTNING AV VAD VI HITTAT
 \newcommand*{\MyIndent}{\hspace*{0.5cm}}%
 \begin{tabular}{|l|}
 	\hline
-	\textbf{Summary of evidence file: (Found and verified in Encase)} \\ \hline
+	\textbf{Summary of evidence file: (Found and verified in Encase, confirmed with FTK Imager)} \\ \hline
 	\textbf{Image file name:} evgeny\textunderscore 40GB\textunderscore 2.raw \\
 	\textbf{Image Name:} evgeny-laptop \\
 	\textbf{Image file MD5:} e6dc38a4f42910729669990138f86265 \\
@@ -292,6 +292,24 @@ GLÖM INTE FYLLA I SAMMANFATTNING AV VAD VI HITTAT
 		
 	\end{itemize}
 	
+	\item Within the prefetch folder, located under C:\textbackslash Windows \textbackslash Prefetch \textbackslash Alot of programs were found. The following were of special interest. In the Hex Editor, we can examine their offset 0x0098 to se the execution counter.
+	
+		\begin{itemize}
+			\item \textit{Name: CHROME.EXE-2BCCABC3.pf}   \textit{Number of times run: 3}		
+			\item \textit{Name: DEFRAG.EXE-588F90AD.pf}   \textit{Number of times run: 2}
+			\item \textit{Name: FIREFOX.EXE-18ACFCFF.pf}   \textit{Number of times run: 23}
+			\item \textit{Name: GPG2.EXE-1B9A0D5C.pf}   \textit{Number of times run: 35}
+			\item \textit{Name: GPG2.EXE-991DA12B.pf}  	\textit{Number of times run: 26}
+			\item \textit{Name:GPG2KEYS \textunderscore HKP.EXE-954DD732.pf}   \textit{Number of times run: 1}
+			\item \textit{Name:ICQ.EXE-8679171E.pf}   	\textit{Number of times run: 11}
+			\item \textit{Name:THUNDERBIRD.EXE-A0DA674F.pf}   \textit{Number of times run: 13}
+			\item \textit{Name:WINZIPRO.EXE-833B92D4.pf}  	\textit{Number of times run: 24}
+			
+		\end{itemize}
+	
+	From this, we can see that the programs Firefox, GPG2 (two different variants of GPG2.exe) ICQ,Winzip Pro and Thunderbird has been run numerous times by the SUSPECT.
+	
+	We could not find any programs that have never executed within the prefetch folder. By its nature, the prefetch folder should contain data only from programs that have run on the computer.
 	
 \end{itemize}
 
