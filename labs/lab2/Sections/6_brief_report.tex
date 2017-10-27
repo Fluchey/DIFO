@@ -131,14 +131,14 @@ GLÖM INTE FYLLA I SAMMANFATTNING AV VAD VI HITTAT
 	\end{itemize}
 	
 	\newpage
-	\item \textbf{Programs found}
+	\item \textbf{Installed programs found}
 	
 	\begin{tabular}{|r|l|}
 		\hline
 		\textbf{7-zip} & Compression program \\
 		\textbf{DVD Maker} & Used for creating DVD:s \\
 		\textbf{Eraser} & Used for deletion of files \\
-		\textbf{Facebook chat IM}
+		\textbf{Facebook chat IM} & A client for facebook chat \\
 		\textbf{Filezilla FTP Client} & A file transfer program \\
 		\textbf{Gnu Privacy Guard (GNU-PG)} & Used for encrypting data \\
 		\textbf{Hidden Tear} & A program used for creating ransomware \\
@@ -153,7 +153,7 @@ GLÖM INTE FYLLA I SAMMANFATTNING AV VAD VI HITTAT
 	\newpage
 	\item \textbf{Program data found}
 	\begin{itemize}
-		\item Thunderbird (Email client): 
+		\item \textbf{Thunderbird (Email client):} 
 		\begin{itemize}
 			\item email addresses found under "TO":
 			\begin{itemize}
@@ -191,8 +191,39 @@ GLÖM INTE FYLLA I SAMMANFATTNING AV VAD VI HITTAT
 				
 			\end{itemize}
 		\end{itemize}
-	\end{itemize}
 	
+	\item \textbf{FileZilla}
+	\begin{itemize}
+		
+	\item Indication of attempted access to ftp was found with the local installation of FileZilla.
+	
+	\begin{itemize}
+		\item "C:\textbackslash Users\textbackslash evgeny\textbackslash AppData\textbackslash Roaming\textbackslash FileZilla\textbackslash recenttservers.xml" contained the following connections:
+		\item \textit{IP-Address:} 72.22.81.47:22 \textit{Username:} lucky456 \textit{Password hash:} bHVja3k0NTY=
+		\item \textit{IP-Address:} 31.220.43.103:999 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj
+		\item \textit{IP-Address:} 31.220.43.103:22 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj\\
+		
+	\end{itemize}
+	\end{itemize}
+	\item \textbf{Gnupg}
+		\begin{itemize}
+			\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Local \textbackslash Temp \textbackslash gpg-hwyPbw \textbackslash tempin.txt - the following file was found concerning a connection to the GnuPG key server
+			\begin{lstlisting}
+				# This is a GnuPG 2.0.28 keyserver communications file
+				VERSION 1
+				PROGRAM 2.0.28
+				SCHEME hkp
+				HOST keyserver2.pgp.com
+				PORT 11371
+				PATH /
+				COMMAND GET
+				
+				0x424A6212
+
+			\end{lstlisting}
+		\end{itemize}
+
+		\end{itemize}
 	
 	\newpage
 	\item Virtual operating systems found
@@ -202,50 +233,30 @@ GLÖM INTE FYLLA I SAMMANFATTNING AV VAD VI HITTAT
 		\textbf{Kali Linux} & Debian-derived Linux distribution designed for digital forensics and penetration testing \\
 		\textbf{Tails Linux} & Security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity \\
 		\hline
-	\end{tabular}	
+	\end{tabular}
+
+	\newpage
+	\item Network data found
 	
-	\item under the registry key \textbackslash system \textbackslash ControlSet001 \textbackslash Services \textbackslash Tcpip \textbackslash Parameters \textbackslash the following information was found:
+	\begin{itemize}
+	
+	\item The registry key "\textbackslash system\textbackslash ControlSet001\textbackslash Services\textbackslash Tcpip\textbackslash Parameters\textbackslash" contained the following information
 	\begin{itemize}
 		\item \textit{Name:} ICSDomain  \textit{data: mshome.net}
 		\item \textit{Name:} Hostname  \textit{data: evgeny-laptop}
 		
 	\end{itemize}
 	
-	\item under registry key \textbackslash Interfaces \textbackslash \textbraceleft AB3E992B-CC1C-464D-A1D6-9EB82846715C \textbraceright
+	\item The registry key \textbackslash Interfaces\textbackslash \{AB3E992B-CC1C-464D-A1D6-9EB82846715C\} contained
 	
 	\begin{itemize}
 		\item \textit{Name:} DhcpIPAddress  \textit{data: 172.17.1.183}
 		\item \textit{Name:} DhcpNameServer  \textit{cs2lab.dsv.su.se}
 	\end{itemize}
 	
-	\item Indication of attempted access to ftp was found with the local installation of FileZilla.
+\end{itemize}	
 	
-	\begin{itemize}
-		\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Roaming \textbackslash FileZilla \textbackslash recenttservers.xml \\
-		recent connections in the above file was:
-		\item \textit{IP-Address:} 72.22.81.47:22 \textit{Username:} lucky456 \textit{Password hash:} bHVja3k0NTY=
-		\item \textit{IP-Address:} 31.220.43.103:999 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj
-		\item \textit{IP-Address:} 31.220.43.103:22 \textit{Username:} lucky456 \textit{Password hash:} cXZhYzE1MTBTWlpKcDlj\\
-		
-		\item under C: \textbackslash Users \textbackslash evgeny \textbackslash AppData \textbackslash Local \textbackslash Temp \textbackslash gpg-hwyPbw \textbackslash tempin.txt - the following file was found concerning a connection to the GnuPG key server\\
-		
-		\begin{lstlisting}
-		# This is a GnuPG 2.0.28 keyserver communications file
-		VERSION 1
-		PROGRAM 2.0.28
-		SCHEME hkp
-		HOST keyserver2.pgp.com
-		PORT 11371
-		PATH /
-		COMMAND GET
-		
-		0x424A6212
-		
-		\end{lstlisting}
-		
-	\end{itemize}	
-	
-	
+	\newpage
 	\item The investigation has so far found a lot of information within the windows registry, as stated above. The registry hives searched through has been:
 	
 	\item 
